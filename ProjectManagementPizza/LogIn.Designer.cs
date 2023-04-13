@@ -86,7 +86,7 @@ namespace ProjectManagementPizza
             // 
             // txtAccount
             // 
-            this.txtAccount.Location = new System.Drawing.Point(225, 82);
+            this.txtAccount.Location = new System.Drawing.Point(225, 75);
             this.txtAccount.Name = "txtAccount";
             this.txtAccount.Size = new System.Drawing.Size(236, 22);
             this.txtAccount.TabIndex = 3;
