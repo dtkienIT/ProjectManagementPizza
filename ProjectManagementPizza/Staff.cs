@@ -98,6 +98,7 @@ namespace ProjectManagementPizza
                 db.SubmitChanges();
                 MyCommune();
                 MyStaff();
+                resetall();
             }   
             else { }
         }
@@ -175,6 +176,7 @@ namespace ProjectManagementPizza
                 s.salary = Convert.ToInt32(txtSalary.Text);
                 s.commune_id = cbCommune.Text;
                 db.SubmitChanges();
+                MessageBox.Show("Nhap thanh cong!");
             }
             else 
             { }
@@ -184,7 +186,15 @@ namespace ProjectManagementPizza
         {
             MyStaff();
         }
-
+        public void resetall()
+        {
+            txtEmail.ResetText();
+            txtSName.ResetText();
+            txtSID.ResetText();
+            txtPhone.ResetText();
+            txtSalary.ResetText();
+            txtStreet.ResetText();
+        }
         private void btCancel_Click(object sender, EventArgs e)
         {
             txtEmail.ResetText();
@@ -193,6 +203,11 @@ namespace ProjectManagementPizza
             txtPhone.ResetText();
             txtSalary.ResetText();
             txtStreet.ResetText();
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape) { this.Close(); return false; }
+            else return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
