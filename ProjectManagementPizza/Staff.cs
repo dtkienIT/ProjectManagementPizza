@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -96,6 +97,7 @@ namespace ProjectManagementPizza
                 });
                 db.SubmitChanges();
                 MyCommune();
+                MyStaff();
             }   
             else { }
         }
@@ -132,12 +134,19 @@ namespace ProjectManagementPizza
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-            int r= dataGridView1.CurrentCell.RowIndex;
-            string temp = dataGridView1.Rows[r].Cells[0].Value.ToString();
-            staff s = db.staffs.Single(x => x.staff_id == Convert.ToInt32(temp));
-            db.staffs.DeleteOnSubmit(s);
-            db.SubmitChanges();
-            MyStaff();
+            try
+            {
+                int r = dataGridView1.CurrentCell.RowIndex;
+                string temp = dataGridView1.Rows[r].Cells[0].Value.ToString();
+                staff s = db.staffs.Single(x => x.staff_id == Convert.ToInt32(temp));
+                db.staffs.DeleteOnSubmit(s);
+                db.SubmitChanges();
+                MyStaff();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Loi khong the xoa! ");
+            }
         }
 
         private void btEdit_Click(object sender, EventArgs e)
@@ -164,6 +173,7 @@ namespace ProjectManagementPizza
                 s.street = txtStreet.Text;
 
                 s.salary = Convert.ToInt32(txtSalary.Text);
+                s.commune_id = cbCommune.Text;
                 db.SubmitChanges();
             }
             else 
@@ -173,6 +183,16 @@ namespace ProjectManagementPizza
         private void button1_Click_1(object sender, EventArgs e)
         {
             MyStaff();
+        }
+
+        private void btCancel_Click(object sender, EventArgs e)
+        {
+            txtEmail.ResetText();
+            txtSName.ResetText();
+            txtSID.ResetText();
+            txtPhone.ResetText();
+            txtSalary.ResetText();
+            txtStreet.ResetText();
         }
     }
 }

@@ -51,6 +51,7 @@
             this.txtSName = new System.Windows.Forms.TextBox();
             this.cbCommune = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btCancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -139,6 +140,7 @@
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.panel1.Controls.Add(this.btCancel);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btReturn);
             this.panel1.Controls.Add(this.btDelete);
@@ -168,9 +170,9 @@
             // 
             // btReturn
             // 
-            this.btReturn.Location = new System.Drawing.Point(718, 495);
+            this.btReturn.Location = new System.Drawing.Point(738, 495);
             this.btReturn.Name = "btReturn";
-            this.btReturn.Size = new System.Drawing.Size(115, 47);
+            this.btReturn.Size = new System.Drawing.Size(95, 47);
             this.btReturn.TabIndex = 19;
             this.btReturn.Text = "Return to Menu";
             this.btReturn.UseVisualStyleBackColor = true;
@@ -178,9 +180,9 @@
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(462, 495);
+            this.btDelete.Location = new System.Drawing.Point(289, 495);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(115, 47);
+            this.btDelete.Size = new System.Drawing.Size(95, 47);
             this.btDelete.TabIndex = 18;
             this.btDelete.Text = "Delete";
             this.btDelete.UseVisualStyleBackColor = true;
@@ -188,9 +190,9 @@
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(332, 495);
+            this.btSave.Location = new System.Drawing.Point(401, 495);
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(115, 47);
+            this.btSave.Size = new System.Drawing.Size(95, 47);
             this.btSave.TabIndex = 17;
             this.btSave.Text = "Save";
             this.btSave.UseVisualStyleBackColor = true;
@@ -198,9 +200,9 @@
             // 
             // btEdit
             // 
-            this.btEdit.Location = new System.Drawing.Point(201, 495);
+            this.btEdit.Location = new System.Drawing.Point(174, 495);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(115, 47);
+            this.btEdit.Size = new System.Drawing.Size(95, 47);
             this.btEdit.TabIndex = 16;
             this.btEdit.Text = "Edit";
             this.btEdit.UseVisualStyleBackColor = true;
@@ -210,7 +212,7 @@
             // 
             this.btAdd.Location = new System.Drawing.Point(69, 495);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(115, 47);
+            this.btAdd.Size = new System.Drawing.Size(84, 47);
             this.btAdd.TabIndex = 15;
             this.btAdd.Text = "Add";
             this.btAdd.UseVisualStyleBackColor = true;
@@ -280,13 +282,23 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(597, 495);
+            this.button1.Location = new System.Drawing.Point(515, 495);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 47);
+            this.button1.Size = new System.Drawing.Size(95, 47);
             this.button1.TabIndex = 20;
             this.button1.Text = "Reload";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btCancel
+            // 
+            this.btCancel.Location = new System.Drawing.Point(627, 495);
+            this.btCancel.Name = "btCancel";
+            this.btCancel.Size = new System.Drawing.Size(95, 47);
+            this.btCancel.TabIndex = 21;
+            this.btCancel.Text = "Cancel";
+            this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // Staff
             // 
@@ -329,5 +341,6 @@
         private System.Windows.Forms.TextBox txtSName;
         private System.Windows.Forms.ComboBox cbCommune;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btCancel;
     }
 }
