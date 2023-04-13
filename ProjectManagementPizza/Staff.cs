@@ -20,20 +20,7 @@ namespace ProjectManagementPizza
             InitializeComponent();
         }
         PizzaDataContext db = null;
-        void SetBtEdit_On()
-        {
-            return;
-            btAdd.Enabled = true;
-            btSave.Enabled = true;
-           
-           
-            // Enable các control Add, Edit, Delete, Exit...
-            btAdd.Enabled = false;
-            btEdit.Enabled = false;
-            btDelete.Enabled = false;
-            btReturn.Enabled = false;
-            dataGridView1.Enabled = false;
-        }
+       
         private void MyCommune()
         {
             db = new PizzaDataContext();
