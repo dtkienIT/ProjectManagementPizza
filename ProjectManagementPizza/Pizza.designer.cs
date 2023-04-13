@@ -48,9 +48,9 @@ namespace ProjectManagementPizza
     partial void Insertorder_detail(order_detail instance);
     partial void Updateorder_detail(order_detail instance);
     partial void Deleteorder_detail(order_detail instance);
-    partial void Insertorder(order instance);
-    partial void Updateorder(order instance);
-    partial void Deleteorder(order instance);
+    partial void Insertorder(orderRequest instance);
+    partial void Updateorder(orderRequest instance);
+    partial void Deleteorder(orderRequest instance);
     partial void Insertpizza(pizza instance);
     partial void Updatepizza(pizza instance);
     partial void Deletepizza(pizza instance);
@@ -146,11 +146,11 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		public System.Data.Linq.Table<order> orders
+		public System.Data.Linq.Table<orderRequest> orders
 		{
 			get
 			{
-				return this.GetTable<order>();
+				return this.GetTable<orderRequest>();
 			}
 		}
 		
@@ -586,7 +586,7 @@ namespace ProjectManagementPizza
 		
 		private string _commune_id;
 		
-		private EntitySet<order> _orders;
+		private EntitySet<orderRequest> _orders;
 		
 		private EntityRef<commune> _commune;
 		
@@ -610,7 +610,7 @@ namespace ProjectManagementPizza
 		
 		public customer()
 		{
-			this._orders = new EntitySet<order>(new Action<order>(this.attach_orders), new Action<order>(this.detach_orders));
+			this._orders = new EntitySet<orderRequest>(new Action<orderRequest>(this.attach_orders), new Action<orderRequest>(this.detach_orders));
 			this._commune = default(EntityRef<commune>);
 			OnCreated();
 		}
@@ -740,7 +740,7 @@ namespace ProjectManagementPizza
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_order", Storage="_orders", ThisKey="customer_id", OtherKey="customer_id")]
-		public EntitySet<order> orders
+		public EntitySet<orderRequest> orders
 		{
 			get
 			{
@@ -806,13 +806,13 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		private void attach_orders(order entity)
+		private void attach_orders(orderRequest entity)
 		{
 			this.SendPropertyChanging();
 			entity.customer = this;
 		}
 		
-		private void detach_orders(order entity)
+		private void detach_orders(orderRequest entity)
 		{
 			this.SendPropertyChanging();
 			entity.customer = null;
@@ -1100,7 +1100,7 @@ namespace ProjectManagementPizza
 		
 		private decimal _unit_price;
 		
-		private EntityRef<order> _order;
+		private EntityRef<orderRequest> _order;
 		
 		private EntityRef<product> _product;
 		
@@ -1122,7 +1122,7 @@ namespace ProjectManagementPizza
 		
 		public order_detail()
 		{
-			this._order = default(EntityRef<order>);
+			this._order = default(EntityRef<orderRequest>);
 			this._product = default(EntityRef<product>);
 			OnCreated();
 		}
@@ -1236,7 +1236,7 @@ namespace ProjectManagementPizza
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="order_order_detail", Storage="_order", ThisKey="order_id", OtherKey="order_id", IsForeignKey=true)]
-		public order order
+		public orderRequest order
 		{
 			get
 			{
@@ -1244,7 +1244,7 @@ namespace ProjectManagementPizza
 			}
 			set
 			{
-				order previousValue = this._order.Entity;
+				orderRequest previousValue = this._order.Entity;
 				if (((previousValue != value) 
 							|| (this._order.HasLoadedOrAssignedValue == false)))
 				{
@@ -1325,7 +1325,7 @@ namespace ProjectManagementPizza
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.orders")]
-	public partial class order : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class orderRequest : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1366,7 +1366,7 @@ namespace ProjectManagementPizza
     partial void OnstatusChanged();
     #endregion
 		
-		public order()
+		public orderRequest()
 		{
 			this._order_details = new EntitySet<order_detail>(new Action<order_detail>(this.attach_order_details), new Action<order_detail>(this.detach_order_details));
 			this._customer = default(EntityRef<customer>);
@@ -2159,7 +2159,7 @@ namespace ProjectManagementPizza
 		
 		private System.Nullable<decimal> _salary;
 		
-		private EntitySet<order> _orders;
+		private EntitySet<orderRequest> _orders;
 		
 		private EntityRef<commune> _commune;
 		
@@ -2185,7 +2185,7 @@ namespace ProjectManagementPizza
 		
 		public staff()
 		{
-			this._orders = new EntitySet<order>(new Action<order>(this.attach_orders), new Action<order>(this.detach_orders));
+			this._orders = new EntitySet<orderRequest>(new Action<orderRequest>(this.attach_orders), new Action<orderRequest>(this.detach_orders));
 			this._commune = default(EntityRef<commune>);
 			OnCreated();
 		}
@@ -2335,7 +2335,7 @@ namespace ProjectManagementPizza
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="staff_order", Storage="_orders", ThisKey="staff_id", OtherKey="staff_id")]
-		public EntitySet<order> orders
+		public EntitySet<orderRequest> orders
 		{
 			get
 			{
@@ -2401,13 +2401,13 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		private void attach_orders(order entity)
+		private void attach_orders(orderRequest entity)
 		{
 			this.SendPropertyChanging();
 			entity.staff = this;
 		}
 		
-		private void detach_orders(order entity)
+		private void detach_orders(orderRequest entity)
 		{
 			this.SendPropertyChanging();
 			entity.staff = null;
