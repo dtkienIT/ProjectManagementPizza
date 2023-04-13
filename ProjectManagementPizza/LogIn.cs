@@ -36,8 +36,8 @@ namespace ProjectManagementPizza
                 {
                     // Tài khoản đăng nhập hợp lệ, tiếp tục xử lý đăng nhập ở đây
                    
-                        Form ap = new Form1();
-                        ap.Show();
+                        Form ap = new MenuQuanLi();
+                        ap.ShowDialog();
                         this.Hide();
                   
                 }
