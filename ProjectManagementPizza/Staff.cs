@@ -55,7 +55,7 @@ namespace ProjectManagementPizza
         {
             int t, y;
             bool a = int.TryParse(txtSID.Text,out t);
-            bool b =int.TryParse(txtEmail.Text,out y);
+            bool b =int.TryParse(txtSalary.Text,out y);
             if (a == false)
             {
                 MessageBox.Show("ID khong hop le! moi nhap lai! ");
@@ -92,6 +92,7 @@ namespace ProjectManagementPizza
                     street = txtStreet.Text,
 
                     salary = Convert.ToInt32(txtSalary.Text),
+                    commune_id = cbCommune.Text,
                 });
                 db.SubmitChanges();
                 MyCommune();
@@ -167,6 +168,11 @@ namespace ProjectManagementPizza
             }
             else 
             { }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MyStaff();
         }
     }
 }

@@ -35,10 +35,10 @@ namespace ProjectManagementPizza
                 if (user != null)
                 {
                     // Tài khoản đăng nhập hợp lệ, tiếp tục xử lý đăng nhập ở đây
-                   
-                        Form ap = new MenuQuanLi();
-                        ap.ShowDialog();
-                        this.Hide();
+                    this.Hide();
+                    MenuQuanLi ap = new MenuQuanLi();
+                    ap.ShowDialog();
+                    this.Close();    
                   
                 }
                 else
@@ -48,6 +48,15 @@ namespace ProjectManagementPizza
 
                 }
             }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void LogIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

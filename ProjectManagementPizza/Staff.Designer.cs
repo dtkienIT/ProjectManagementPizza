@@ -37,19 +37,20 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbCommune = new System.Windows.Forms.ComboBox();
-            this.txtSName = new System.Windows.Forms.TextBox();
-            this.txtSID = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtStreet = new System.Windows.Forms.TextBox();
-            this.txtSalary = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btAdd = new System.Windows.Forms.Button();
-            this.btEdit = new System.Windows.Forms.Button();
-            this.btSave = new System.Windows.Forms.Button();
-            this.btDelete = new System.Windows.Forms.Button();
             this.btReturn = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
+            this.btSave = new System.Windows.Forms.Button();
+            this.btEdit = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtSalary = new System.Windows.Forms.TextBox();
+            this.txtStreet = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSID = new System.Windows.Forms.TextBox();
+            this.txtSName = new System.Windows.Forms.TextBox();
+            this.cbCommune = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -138,6 +139,7 @@
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btReturn);
             this.panel1.Controls.Add(this.btDelete);
             this.panel1.Controls.Add(this.btSave);
@@ -164,56 +166,55 @@
             this.panel1.Size = new System.Drawing.Size(917, 557);
             this.panel1.TabIndex = 7;
             // 
-            // cbCommune
+            // btReturn
             // 
-            this.cbCommune.FormattingEnabled = true;
-            this.cbCommune.Location = new System.Drawing.Point(584, 264);
-            this.cbCommune.Name = "cbCommune";
-            this.cbCommune.Size = new System.Drawing.Size(240, 24);
-            this.cbCommune.TabIndex = 7;
-            this.cbCommune.SelectedIndexChanged += new System.EventHandler(this.cbCommune_SelectedIndexChanged);
+            this.btReturn.Location = new System.Drawing.Point(718, 495);
+            this.btReturn.Name = "btReturn";
+            this.btReturn.Size = new System.Drawing.Size(115, 47);
+            this.btReturn.TabIndex = 19;
+            this.btReturn.Text = "Return to Menu";
+            this.btReturn.UseVisualStyleBackColor = true;
+            this.btReturn.Click += new System.EventHandler(this.button5_Click);
             // 
-            // txtSName
+            // btDelete
             // 
-            this.txtSName.Location = new System.Drawing.Point(201, 99);
-            this.txtSName.Name = "txtSName";
-            this.txtSName.Size = new System.Drawing.Size(295, 22);
-            this.txtSName.TabIndex = 8;
+            this.btDelete.Location = new System.Drawing.Point(462, 495);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(115, 47);
+            this.btDelete.TabIndex = 18;
+            this.btDelete.Text = "Delete";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
-            // txtSID
+            // btSave
             // 
-            this.txtSID.Location = new System.Drawing.Point(152, 155);
-            this.txtSID.Name = "txtSID";
-            this.txtSID.Size = new System.Drawing.Size(245, 22);
-            this.txtSID.TabIndex = 9;
+            this.btSave.Location = new System.Drawing.Point(332, 495);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(115, 47);
+            this.btSave.TabIndex = 17;
+            this.btSave.Text = "Save";
+            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
-            // txtEmail
+            // btEdit
             // 
-            this.txtEmail.Location = new System.Drawing.Point(538, 159);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(295, 22);
-            this.txtEmail.TabIndex = 10;
+            this.btEdit.Location = new System.Drawing.Point(201, 495);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(115, 47);
+            this.btEdit.TabIndex = 16;
+            this.btEdit.Text = "Edit";
+            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
-            // txtPhone
+            // btAdd
             // 
-            this.txtPhone.Location = new System.Drawing.Point(150, 214);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(245, 22);
-            this.txtPhone.TabIndex = 11;
-            // 
-            // txtStreet
-            // 
-            this.txtStreet.Location = new System.Drawing.Point(150, 266);
-            this.txtStreet.Name = "txtStreet";
-            this.txtStreet.Size = new System.Drawing.Size(206, 22);
-            this.txtStreet.TabIndex = 12;
-            // 
-            // txtSalary
-            // 
-            this.txtSalary.Location = new System.Drawing.Point(538, 214);
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(295, 22);
-            this.txtSalary.TabIndex = 13;
+            this.btAdd.Location = new System.Drawing.Point(69, 495);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(115, 47);
+            this.btAdd.TabIndex = 15;
+            this.btAdd.Text = "Add";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -226,55 +227,66 @@
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // btAdd
+            // txtSalary
             // 
-            this.btAdd.Location = new System.Drawing.Point(69, 495);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(115, 47);
-            this.btAdd.TabIndex = 15;
-            this.btAdd.Text = "Add";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.button1_Click);
+            this.txtSalary.Location = new System.Drawing.Point(538, 214);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(295, 22);
+            this.txtSalary.TabIndex = 13;
             // 
-            // btEdit
+            // txtStreet
             // 
-            this.btEdit.Location = new System.Drawing.Point(241, 495);
-            this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(115, 47);
-            this.btEdit.TabIndex = 16;
-            this.btEdit.Text = "Edit";
-            this.btEdit.UseVisualStyleBackColor = true;
-            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
+            this.txtStreet.Location = new System.Drawing.Point(150, 266);
+            this.txtStreet.Name = "txtStreet";
+            this.txtStreet.Size = new System.Drawing.Size(206, 22);
+            this.txtStreet.TabIndex = 12;
             // 
-            // btSave
+            // txtPhone
             // 
-            this.btSave.Location = new System.Drawing.Point(400, 495);
-            this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(115, 47);
-            this.btSave.TabIndex = 17;
-            this.btSave.Text = "Save";
-            this.btSave.UseVisualStyleBackColor = true;
-            this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            this.txtPhone.Location = new System.Drawing.Point(150, 214);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(245, 22);
+            this.txtPhone.TabIndex = 11;
             // 
-            // btDelete
+            // txtEmail
             // 
-            this.btDelete.Location = new System.Drawing.Point(560, 495);
-            this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(115, 47);
-            this.btDelete.TabIndex = 18;
-            this.btDelete.Text = "Delete";
-            this.btDelete.UseVisualStyleBackColor = true;
-            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            this.txtEmail.Location = new System.Drawing.Point(538, 159);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(295, 22);
+            this.txtEmail.TabIndex = 10;
             // 
-            // btReturn
+            // txtSID
             // 
-            this.btReturn.Location = new System.Drawing.Point(718, 495);
-            this.btReturn.Name = "btReturn";
-            this.btReturn.Size = new System.Drawing.Size(115, 47);
-            this.btReturn.TabIndex = 19;
-            this.btReturn.Text = "Return to Menu";
-            this.btReturn.UseVisualStyleBackColor = true;
-            this.btReturn.Click += new System.EventHandler(this.button5_Click);
+            this.txtSID.Location = new System.Drawing.Point(152, 155);
+            this.txtSID.Name = "txtSID";
+            this.txtSID.Size = new System.Drawing.Size(245, 22);
+            this.txtSID.TabIndex = 9;
+            // 
+            // txtSName
+            // 
+            this.txtSName.Location = new System.Drawing.Point(201, 99);
+            this.txtSName.Name = "txtSName";
+            this.txtSName.Size = new System.Drawing.Size(295, 22);
+            this.txtSName.TabIndex = 8;
+            // 
+            // cbCommune
+            // 
+            this.cbCommune.FormattingEnabled = true;
+            this.cbCommune.Location = new System.Drawing.Point(584, 264);
+            this.cbCommune.Name = "cbCommune";
+            this.cbCommune.Size = new System.Drawing.Size(240, 24);
+            this.cbCommune.TabIndex = 7;
+            this.cbCommune.SelectedIndexChanged += new System.EventHandler(this.cbCommune_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(597, 495);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 47);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Reload";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Staff
             // 
@@ -316,5 +328,6 @@
         private System.Windows.Forms.TextBox txtSID;
         private System.Windows.Forms.TextBox txtSName;
         private System.Windows.Forms.ComboBox cbCommune;
+        private System.Windows.Forms.Button button1;
     }
 }

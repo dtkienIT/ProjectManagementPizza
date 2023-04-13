@@ -22,13 +22,30 @@ namespace ProjectManagementPizza
 
         }
 
-        private void createStaffToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void returnToLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LogIn z = new LogIn();
+            z.ShowDialog();
+            this.Close();
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape) { this.Close(); return false; }
+            else return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void createStaffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Staff z= new Staff();
+            z.ShowDialog();
             this.Close();
         }
     }
