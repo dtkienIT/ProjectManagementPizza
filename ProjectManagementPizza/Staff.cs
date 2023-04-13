@@ -197,12 +197,7 @@ namespace ProjectManagementPizza
         }
         private void btCancel_Click(object sender, EventArgs e)
         {
-            txtEmail.ResetText();
-            txtSName.ResetText();
-            txtSID.ResetText();
-            txtPhone.ResetText();
-            txtSalary.ResetText();
-            txtStreet.ResetText();
+            resetall();
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
