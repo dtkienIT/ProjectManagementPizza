@@ -53,6 +53,12 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuQuanLi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuQuanLi.Designer.cs">
+      <DependentUpon>MenuQuanLi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pizza.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,6 +72,9 @@
     <None Include="Pizza.dbml.layout">
       <DependentUpon>Pizza.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="MenuQuanLi.resx">
+      <DependentUpon>MenuQuanLi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
