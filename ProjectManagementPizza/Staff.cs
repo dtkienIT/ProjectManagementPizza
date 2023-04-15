@@ -71,6 +71,15 @@ namespace ProjectManagementPizza
             MyCommune();
         }
 
+        
+
+        
+
+       
+
+        
+
+       
         public void resetall()
         {
             txtEmail.ResetText();

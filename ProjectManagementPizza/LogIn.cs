@@ -21,6 +21,7 @@ namespace ProjectManagementPizza
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Escape) { this.Close(); return false; }
+            else if (keyData == Keys.Enter) { btLogin.PerformClick(); return false; }
             else return base.ProcessCmdKey(ref msg, keyData);
         }
         private void btLogin_Click(object sender, EventArgs e)

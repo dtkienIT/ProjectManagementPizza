@@ -56,6 +56,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -182,8 +183,9 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1170, 303);
+            this.dataGridView1.Size = new System.Drawing.Size(876, 303);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtSalary
             // 
@@ -234,6 +236,7 @@
             this.cbCommune.Name = "cbCommune";
             this.cbCommune.Size = new System.Drawing.Size(240, 24);
             this.cbCommune.TabIndex = 7;
+            this.cbCommune.SelectedIndexChanged += new System.EventHandler(this.cbCommune_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -355,12 +358,22 @@
             this.panel2.Size = new System.Drawing.Size(876, 391);
             this.panel2.TabIndex = 25;
             // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(895, 410);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(287, 253);
+            this.panel3.TabIndex = 26;
+            // 
             // Staff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1197, 724);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
@@ -404,5 +417,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
