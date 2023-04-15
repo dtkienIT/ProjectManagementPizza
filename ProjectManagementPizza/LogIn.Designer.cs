@@ -50,7 +50,7 @@ namespace ProjectManagementPizza
             this.panel1.Controls.Add(this.txtAccount);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(281, 186);
+            this.panel1.Location = new System.Drawing.Point(601, 389);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(485, 335);
             this.panel1.TabIndex = 4;
@@ -121,12 +121,13 @@ namespace ProjectManagementPizza
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1051, 613);
+            this.ClientSize = new System.Drawing.Size(1137, 686);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LogIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LogIn_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
