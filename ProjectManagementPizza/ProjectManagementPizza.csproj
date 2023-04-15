@@ -65,6 +65,12 @@
     <Compile Include="MenuQuanLi.Designer.cs">
       <DependentUpon>MenuQuanLi.cs</DependentUpon>
     </Compile>
+    <Compile Include="ORDER.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ORDER.Designer.cs">
+      <DependentUpon>ORDER.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pizza.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

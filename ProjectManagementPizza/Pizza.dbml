@@ -53,21 +53,8 @@
       <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="unit_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
-      <Association Name="order_order_detail" Member="order" ThisKey="order_id" OtherKey="order_id" Type="order" IsForeignKey="true" />
       <Association Name="product_order_detail" Member="product" ThisKey="product_id" OtherKey="product_id" Type="product" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.orders" Member="orders">
-    <Type Name="order">
-      <Column Name="order_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="customer_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="staff_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="order_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="total" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
-      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="order_order_detail" Member="order_details" ThisKey="order_id" OtherKey="order_id" Type="order_detail" />
-      <Association Name="customer_order" Member="customer" ThisKey="customer_id" OtherKey="customer_id" Type="customer" IsForeignKey="true" />
-      <Association Name="staff_order" Member="staff" ThisKey="staff_id" OtherKey="staff_id" Type="staff" IsForeignKey="true" />
+      <Association Name="order_order_detail" Member="order" ThisKey="order_id" OtherKey="order_id" Type="order" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.pizza" Member="pizzas">
@@ -118,6 +105,19 @@
       <Column Name="street" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="commune_id" Type="System.String" DbType="NChar(5)" CanBeNull="true" />
       <Association Name="commune_warehouse" Member="commune" ThisKey="commune_id" OtherKey="commune_id" Type="commune" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.orders" Member="orders">
+    <Type Name="order">
+      <Column Name="order_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customer_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="staff_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="order_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="total" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="order_order_detail" Member="order_details" ThisKey="order_id" OtherKey="order_id" Type="order_detail" />
+      <Association Name="customer_order" Member="customer" ThisKey="customer_id" OtherKey="customer_id" Type="customer" IsForeignKey="true" />
+      <Association Name="staff_order" Member="staff" ThisKey="staff_id" OtherKey="staff_id" Type="staff" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
