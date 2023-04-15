@@ -37,7 +37,6 @@
             this.btDelete = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
-            this.btAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtStreet = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -159,21 +159,6 @@
             this.btEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btEdit.UseVisualStyleBackColor = true;
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click_1);
-            // 
-            // btAdd
-            // 
-            this.btAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btAdd.Enabled = false;
-            this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
-            this.btAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btAdd.Location = new System.Drawing.Point(27, 22);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(104, 47);
-            this.btAdd.TabIndex = 15;
-            this.btAdd.Text = "Add  ";
-            this.btAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // dataGridView1
             // 
@@ -367,6 +352,16 @@
             this.panel3.Size = new System.Drawing.Size(287, 253);
             this.panel3.TabIndex = 26;
             // 
+            // btAdd
+            // 
+            this.btAdd.Location = new System.Drawing.Point(27, 23);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(104, 52);
+            this.btAdd.TabIndex = 22;
+            this.btAdd.Text = "Add";
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click_1);
+            // 
             // Staff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -398,7 +393,6 @@
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Button btEdit;
-        private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.TextBox txtStreet;
@@ -418,5 +412,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btAdd;
     }
 }

@@ -48,9 +48,6 @@ namespace ProjectManagementPizza
     partial void Insertorder_detail(order_detail instance);
     partial void Updateorder_detail(order_detail instance);
     partial void Deleteorder_detail(order_detail instance);
-    partial void Insertorder(orderRequest instance);
-    partial void Updateorder(orderRequest instance);
-    partial void Deleteorder(orderRequest instance);
     partial void Insertpizza(pizza instance);
     partial void Updatepizza(pizza instance);
     partial void Deletepizza(pizza instance);
@@ -66,6 +63,9 @@ namespace ProjectManagementPizza
     partial void Insertwarehouse(warehouse instance);
     partial void Updatewarehouse(warehouse instance);
     partial void Deletewarehouse(warehouse instance);
+    partial void Insertorder(order instance);
+    partial void Updateorder(order instance);
+    partial void Deleteorder(order instance);
     #endregion
 		
 		public PizzaDataContext() : 
@@ -146,14 +146,6 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		public System.Data.Linq.Table<orderRequest> orders
-		{
-			get
-			{
-				return this.GetTable<orderRequest>();
-			}
-		}
-		
 		public System.Data.Linq.Table<pizza> pizzas
 		{
 			get
@@ -191,6 +183,14 @@ namespace ProjectManagementPizza
 			get
 			{
 				return this.GetTable<warehouse>();
+			}
+		}
+		
+		public System.Data.Linq.Table<order> orders
+		{
+			get
+			{
+				return this.GetTable<order>();
 			}
 		}
 	}
@@ -586,7 +586,7 @@ namespace ProjectManagementPizza
 		
 		private string _commune_id;
 		
-		private EntitySet<orderRequest> _orders;
+		private EntitySet<order> _orders;
 		
 		private EntityRef<commune> _commune;
 		
@@ -610,7 +610,7 @@ namespace ProjectManagementPizza
 		
 		public customer()
 		{
-			this._orders = new EntitySet<orderRequest>(new Action<orderRequest>(this.attach_orders), new Action<orderRequest>(this.detach_orders));
+			this._orders = new EntitySet<order>(new Action<order>(this.attach_orders), new Action<order>(this.detach_orders));
 			this._commune = default(EntityRef<commune>);
 			OnCreated();
 		}
@@ -740,7 +740,7 @@ namespace ProjectManagementPizza
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_order", Storage="_orders", ThisKey="customer_id", OtherKey="customer_id")]
-		public EntitySet<orderRequest> orders
+		public EntitySet<order> orders
 		{
 			get
 			{
@@ -806,13 +806,13 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		private void attach_orders(orderRequest entity)
+		private void attach_orders(order entity)
 		{
 			this.SendPropertyChanging();
 			entity.customer = this;
 		}
 		
-		private void detach_orders(orderRequest entity)
+		private void detach_orders(order entity)
 		{
 			this.SendPropertyChanging();
 			entity.customer = null;
@@ -1100,9 +1100,9 @@ namespace ProjectManagementPizza
 		
 		private decimal _unit_price;
 		
-		private EntityRef<orderRequest> _order;
-		
 		private EntityRef<product> _product;
+		
+		private EntityRef<order> _order;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1122,8 +1122,8 @@ namespace ProjectManagementPizza
 		
 		public order_detail()
 		{
-			this._order = default(EntityRef<orderRequest>);
 			this._product = default(EntityRef<product>);
+			this._order = default(EntityRef<order>);
 			OnCreated();
 		}
 		
@@ -1235,40 +1235,6 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="order_order_detail", Storage="_order", ThisKey="order_id", OtherKey="order_id", IsForeignKey=true)]
-		public orderRequest order
-		{
-			get
-			{
-				return this._order.Entity;
-			}
-			set
-			{
-				orderRequest previousValue = this._order.Entity;
-				if (((previousValue != value) 
-							|| (this._order.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._order.Entity = null;
-						previousValue.order_details.Remove(this);
-					}
-					this._order.Entity = value;
-					if ((value != null))
-					{
-						value.order_details.Add(this);
-						this._order_id = value.order_id;
-					}
-					else
-					{
-						this._order_id = default(int);
-					}
-					this.SendPropertyChanged("order");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_order_detail", Storage="_product", ThisKey="product_id", OtherKey="product_id", IsForeignKey=true)]
 		public product product
 		{
@@ -1303,282 +1269,36 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.orders")]
-	public partial class orderRequest : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _order_id;
-		
-		private int _customer_id;
-		
-		private int _staff_id;
-		
-		private System.DateTime _order_date;
-		
-		private decimal _total;
-		
-		private string _status;
-		
-		private EntitySet<order_detail> _order_details;
-		
-		private EntityRef<customer> _customer;
-		
-		private EntityRef<staff> _staff;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onorder_idChanging(int value);
-    partial void Onorder_idChanged();
-    partial void Oncustomer_idChanging(int value);
-    partial void Oncustomer_idChanged();
-    partial void Onstaff_idChanging(int value);
-    partial void Onstaff_idChanged();
-    partial void Onorder_dateChanging(System.DateTime value);
-    partial void Onorder_dateChanged();
-    partial void OntotalChanging(decimal value);
-    partial void OntotalChanged();
-    partial void OnstatusChanging(string value);
-    partial void OnstatusChanged();
-    #endregion
-		
-		public orderRequest()
-		{
-			this._order_details = new EntitySet<order_detail>(new Action<order_detail>(this.attach_order_details), new Action<order_detail>(this.detach_order_details));
-			this._customer = default(EntityRef<customer>);
-			this._staff = default(EntityRef<staff>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int order_id
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="order_order_detail", Storage="_order", ThisKey="order_id", OtherKey="order_id", IsForeignKey=true)]
+		public order order
 		{
 			get
 			{
-				return this._order_id;
+				return this._order.Entity;
 			}
 			set
 			{
-				if ((this._order_id != value))
-				{
-					this.Onorder_idChanging(value);
-					this.SendPropertyChanging();
-					this._order_id = value;
-					this.SendPropertyChanged("order_id");
-					this.Onorder_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="Int NOT NULL")]
-		public int customer_id
-		{
-			get
-			{
-				return this._customer_id;
-			}
-			set
-			{
-				if ((this._customer_id != value))
-				{
-					if (this._customer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncustomer_idChanging(value);
-					this.SendPropertyChanging();
-					this._customer_id = value;
-					this.SendPropertyChanged("customer_id");
-					this.Oncustomer_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_staff_id", DbType="Int NOT NULL")]
-		public int staff_id
-		{
-			get
-			{
-				return this._staff_id;
-			}
-			set
-			{
-				if ((this._staff_id != value))
-				{
-					if (this._staff.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onstaff_idChanging(value);
-					this.SendPropertyChanging();
-					this._staff_id = value;
-					this.SendPropertyChanged("staff_id");
-					this.Onstaff_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_date", DbType="DateTime NOT NULL")]
-		public System.DateTime order_date
-		{
-			get
-			{
-				return this._order_date;
-			}
-			set
-			{
-				if ((this._order_date != value))
-				{
-					this.Onorder_dateChanging(value);
-					this.SendPropertyChanging();
-					this._order_date = value;
-					this.SendPropertyChanged("order_date");
-					this.Onorder_dateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total", DbType="Decimal(10,2) NOT NULL")]
-		public decimal total
-		{
-			get
-			{
-				return this._total;
-			}
-			set
-			{
-				if ((this._total != value))
-				{
-					this.OntotalChanging(value);
-					this.SendPropertyChanging();
-					this._total = value;
-					this.SendPropertyChanged("total");
-					this.OntotalChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
-		public string status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="order_order_detail", Storage="_order_details", ThisKey="order_id", OtherKey="order_id")]
-		public EntitySet<order_detail> order_details
-		{
-			get
-			{
-				return this._order_details;
-			}
-			set
-			{
-				this._order_details.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_order", Storage="_customer", ThisKey="customer_id", OtherKey="customer_id", IsForeignKey=true)]
-		public customer customer
-		{
-			get
-			{
-				return this._customer.Entity;
-			}
-			set
-			{
-				customer previousValue = this._customer.Entity;
+				order previousValue = this._order.Entity;
 				if (((previousValue != value) 
-							|| (this._customer.HasLoadedOrAssignedValue == false)))
+							|| (this._order.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._customer.Entity = null;
-						previousValue.orders.Remove(this);
+						this._order.Entity = null;
+						previousValue.order_details.Remove(this);
 					}
-					this._customer.Entity = value;
+					this._order.Entity = value;
 					if ((value != null))
 					{
-						value.orders.Add(this);
-						this._customer_id = value.customer_id;
+						value.order_details.Add(this);
+						this._order_id = value.order_id;
 					}
 					else
 					{
-						this._customer_id = default(int);
+						this._order_id = default(int);
 					}
-					this.SendPropertyChanged("customer");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="staff_order", Storage="_staff", ThisKey="staff_id", OtherKey="staff_id", IsForeignKey=true)]
-		public staff staff
-		{
-			get
-			{
-				return this._staff.Entity;
-			}
-			set
-			{
-				staff previousValue = this._staff.Entity;
-				if (((previousValue != value) 
-							|| (this._staff.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._staff.Entity = null;
-						previousValue.orders.Remove(this);
-					}
-					this._staff.Entity = value;
-					if ((value != null))
-					{
-						value.orders.Add(this);
-						this._staff_id = value.staff_id;
-					}
-					else
-					{
-						this._staff_id = default(int);
-					}
-					this.SendPropertyChanged("staff");
+					this.SendPropertyChanged("order");
 				}
 			}
 		}
@@ -1601,18 +1321,6 @@ namespace ProjectManagementPizza
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_order_details(order_detail entity)
-		{
-			this.SendPropertyChanging();
-			entity.order = this;
-		}
-		
-		private void detach_order_details(order_detail entity)
-		{
-			this.SendPropertyChanging();
-			entity.order = null;
 		}
 	}
 	
@@ -2159,7 +1867,7 @@ namespace ProjectManagementPizza
 		
 		private System.Nullable<decimal> _salary;
 		
-		private EntitySet<orderRequest> _orders;
+		private EntitySet<order> _orders;
 		
 		private EntityRef<commune> _commune;
 		
@@ -2185,7 +1893,7 @@ namespace ProjectManagementPizza
 		
 		public staff()
 		{
-			this._orders = new EntitySet<orderRequest>(new Action<orderRequest>(this.attach_orders), new Action<orderRequest>(this.detach_orders));
+			this._orders = new EntitySet<order>(new Action<order>(this.attach_orders), new Action<order>(this.detach_orders));
 			this._commune = default(EntityRef<commune>);
 			OnCreated();
 		}
@@ -2335,7 +2043,7 @@ namespace ProjectManagementPizza
 		}
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="staff_order", Storage="_orders", ThisKey="staff_id", OtherKey="staff_id")]
-		public EntitySet<orderRequest> orders
+		public EntitySet<order> orders
 		{
 			get
 			{
@@ -2401,13 +2109,13 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		private void attach_orders(orderRequest entity)
+		private void attach_orders(order entity)
 		{
 			this.SendPropertyChanging();
 			entity.staff = this;
 		}
 		
-		private void detach_orders(orderRequest entity)
+		private void detach_orders(order entity)
 		{
 			this.SendPropertyChanging();
 			entity.staff = null;
@@ -2586,6 +2294,298 @@ namespace ProjectManagementPizza
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.orders")]
+	public partial class order : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _order_id;
+		
+		private int _customer_id;
+		
+		private int _staff_id;
+		
+		private System.DateTime _order_date;
+		
+		private decimal _total;
+		
+		private string _status;
+		
+		private EntitySet<order_detail> _order_details;
+		
+		private EntityRef<customer> _customer;
+		
+		private EntityRef<staff> _staff;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onorder_idChanging(int value);
+    partial void Onorder_idChanged();
+    partial void Oncustomer_idChanging(int value);
+    partial void Oncustomer_idChanged();
+    partial void Onstaff_idChanging(int value);
+    partial void Onstaff_idChanged();
+    partial void Onorder_dateChanging(System.DateTime value);
+    partial void Onorder_dateChanged();
+    partial void OntotalChanging(decimal value);
+    partial void OntotalChanged();
+    partial void OnstatusChanging(string value);
+    partial void OnstatusChanged();
+    #endregion
+		
+		public order()
+		{
+			this._order_details = new EntitySet<order_detail>(new Action<order_detail>(this.attach_order_details), new Action<order_detail>(this.detach_order_details));
+			this._customer = default(EntityRef<customer>);
+			this._staff = default(EntityRef<staff>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int order_id
+		{
+			get
+			{
+				return this._order_id;
+			}
+			set
+			{
+				if ((this._order_id != value))
+				{
+					this.Onorder_idChanging(value);
+					this.SendPropertyChanging();
+					this._order_id = value;
+					this.SendPropertyChanged("order_id");
+					this.Onorder_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="Int NOT NULL")]
+		public int customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					if (this._customer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_staff_id", DbType="Int NOT NULL")]
+		public int staff_id
+		{
+			get
+			{
+				return this._staff_id;
+			}
+			set
+			{
+				if ((this._staff_id != value))
+				{
+					if (this._staff.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onstaff_idChanging(value);
+					this.SendPropertyChanging();
+					this._staff_id = value;
+					this.SendPropertyChanged("staff_id");
+					this.Onstaff_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_date", DbType="DateTime NOT NULL")]
+		public System.DateTime order_date
+		{
+			get
+			{
+				return this._order_date;
+			}
+			set
+			{
+				if ((this._order_date != value))
+				{
+					this.Onorder_dateChanging(value);
+					this.SendPropertyChanging();
+					this._order_date = value;
+					this.SendPropertyChanged("order_date");
+					this.Onorder_dateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total", DbType="Decimal(10,2) NOT NULL")]
+		public decimal total
+		{
+			get
+			{
+				return this._total;
+			}
+			set
+			{
+				if ((this._total != value))
+				{
+					this.OntotalChanging(value);
+					this.SendPropertyChanging();
+					this._total = value;
+					this.SendPropertyChanged("total");
+					this.OntotalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="NVarChar(50)")]
+		public string status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="order_order_detail", Storage="_order_details", ThisKey="order_id", OtherKey="order_id")]
+		public EntitySet<order_detail> order_details
+		{
+			get
+			{
+				return this._order_details;
+			}
+			set
+			{
+				this._order_details.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_order", Storage="_customer", ThisKey="customer_id", OtherKey="customer_id", IsForeignKey=true)]
+		public customer customer
+		{
+			get
+			{
+				return this._customer.Entity;
+			}
+			set
+			{
+				customer previousValue = this._customer.Entity;
+				if (((previousValue != value) 
+							|| (this._customer.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._customer.Entity = null;
+						previousValue.orders.Remove(this);
+					}
+					this._customer.Entity = value;
+					if ((value != null))
+					{
+						value.orders.Add(this);
+						this._customer_id = value.customer_id;
+					}
+					else
+					{
+						this._customer_id = default(int);
+					}
+					this.SendPropertyChanged("customer");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="staff_order", Storage="_staff", ThisKey="staff_id", OtherKey="staff_id", IsForeignKey=true)]
+		public staff staff
+		{
+			get
+			{
+				return this._staff.Entity;
+			}
+			set
+			{
+				staff previousValue = this._staff.Entity;
+				if (((previousValue != value) 
+							|| (this._staff.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._staff.Entity = null;
+						previousValue.orders.Remove(this);
+					}
+					this._staff.Entity = value;
+					if ((value != null))
+					{
+						value.orders.Add(this);
+						this._staff_id = value.staff_id;
+					}
+					else
+					{
+						this._staff_id = default(int);
+					}
+					this.SendPropertyChanged("staff");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_order_details(order_detail entity)
+		{
+			this.SendPropertyChanging();
+			entity.order = this;
+		}
+		
+		private void detach_order_details(order_detail entity)
+		{
+			this.SendPropertyChanging();
+			entity.order = null;
 		}
 	}
 }
