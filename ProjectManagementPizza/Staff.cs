@@ -191,5 +191,10 @@ namespace ProjectManagementPizza
             if (keyData == Keys.Escape) { this.Close(); return false; }
             else return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

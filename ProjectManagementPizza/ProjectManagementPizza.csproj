@@ -65,12 +65,6 @@
     <Compile Include="MenuQuanLi.Designer.cs">
       <DependentUpon>MenuQuanLi.cs</DependentUpon>
     </Compile>
-    <Compile Include="orderRequest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="orderRequest.Designer.cs">
-      <DependentUpon>orderRequest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pizza.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,9 +83,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="orderRequest.resx">
-      <DependentUpon>orderRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>

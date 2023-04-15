@@ -30,10 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuQuanLi));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.returnToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,24 +51,11 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // returnToLoginToolStripMenuItem
-            // 
-            this.returnToLoginToolStripMenuItem.Name = "returnToLoginToolStripMenuItem";
-            this.returnToLoginToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
-            this.returnToLoginToolStripMenuItem.Text = "Return to Login";
-            this.returnToLoginToolStripMenuItem.Click += new System.EventHandler(this.returnToLoginToolStripMenuItem_Click);
-            // 
             // createDataToolStripMenuItem
             // 
             this.createDataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createStaffToolStripMenuItem});
+            this.createStaffToolStripMenuItem,
+            this.createCustomerToolStripMenuItem});
             this.createDataToolStripMenuItem.Name = "createDataToolStripMenuItem";
             this.createDataToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.createDataToolStripMenuItem.Text = "Create Data";
@@ -78,6 +66,27 @@
             this.createStaffToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.createStaffToolStripMenuItem.Text = "Create Staff";
             this.createStaffToolStripMenuItem.Click += new System.EventHandler(this.createStaffToolStripMenuItem_Click);
+            // 
+            // returnToLoginToolStripMenuItem
+            // 
+            this.returnToLoginToolStripMenuItem.Name = "returnToLoginToolStripMenuItem";
+            this.returnToLoginToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
+            this.returnToLoginToolStripMenuItem.Text = "Return to Login";
+            this.returnToLoginToolStripMenuItem.Click += new System.EventHandler(this.returnToLoginToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // createCustomerToolStripMenuItem
+            // 
+            this.createCustomerToolStripMenuItem.Name = "createCustomerToolStripMenuItem";
+            this.createCustomerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.createCustomerToolStripMenuItem.Text = "Create Customer";
+            this.createCustomerToolStripMenuItem.Click += new System.EventHandler(this.createCustomerToolStripMenuItem_Click);
             // 
             // MenuQuanLi
             // 
@@ -91,6 +100,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuQuanLi";
             this.Text = "MenuQuanLi";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuQuanLi_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -107,5 +117,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem createDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createStaffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createCustomerToolStripMenuItem;
     }
 }
