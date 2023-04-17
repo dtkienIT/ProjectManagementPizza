@@ -56,5 +56,13 @@ namespace ProjectManagementPizza
             ap.ShowDialog();
             
         }
+
+        private void createOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ORDER z = new ORDER();  
+            z.ShowDialog();
+            this.Close();
+        }
     }
 }

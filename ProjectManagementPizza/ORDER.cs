@@ -128,6 +128,7 @@ namespace ProjectManagementPizza
                 MyStaff();
                 MyCustomer();
                 resetall();
+                MessageBox.Show("Nhập dữ liệu thành công!");
             }
             else { }
         }
@@ -159,8 +160,8 @@ namespace ProjectManagementPizza
                 order ord = db.orders.Single(x => x.order_id == Convert.ToInt32(temp));
                 db.orders.DeleteOnSubmit(ord);
                 db.SubmitChanges();
-
                 MyOrder();
+                MessageBox.Show("Xoa du lieu thanh cong!");
             }
             catch (Exception ex)
             {
@@ -219,6 +220,14 @@ namespace ProjectManagementPizza
         private void btCancel_Click(object sender, EventArgs e)
         {
             resetall();
+        }
+
+        private void btReturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuQuanLi z = new MenuQuanLi();
+            z.ShowDialog();
+            this.Close();
         }
     }
 }
