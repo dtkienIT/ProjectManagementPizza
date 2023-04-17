@@ -45,7 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.cbCustomer = new System.Windows.Forms.ComboBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtOID = new System.Windows.Forms.TextBox();
             this.cbStaff = new System.Windows.Forms.ComboBox();
@@ -57,7 +57,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,7 @@
             this.btAdd.Text = "Add";
             this.btAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // button1
             // 
@@ -112,6 +113,7 @@
             this.btEdit.Text = "Edit  ";
             this.btEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btSave
             // 
@@ -124,6 +126,7 @@
             this.btSave.Text = "Save";
             this.btSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
             // btDelete
             // 
@@ -136,6 +139,7 @@
             this.btDelete.Text = " Delete";
             this.btDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btCancel
             // 
@@ -149,6 +153,7 @@
             this.btCancel.Text = "Cancel";
             this.btCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // btReturn
             // 
@@ -165,7 +170,7 @@
             // 
             // txtSID
             // 
-            this.txtSID.Location = new System.Drawing.Point(584, 282);
+            this.txtSID.Location = new System.Drawing.Point(584, 273);
             this.txtSID.Name = "txtSID";
             this.txtSID.Size = new System.Drawing.Size(253, 22);
             this.txtSID.TabIndex = 29;
@@ -174,7 +179,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(468, 282);
+            this.label10.Location = new System.Drawing.Point(468, 270);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 25);
             this.label10.TabIndex = 28;
@@ -182,7 +187,7 @@
             // 
             // txtCusID
             // 
-            this.txtCusID.Location = new System.Drawing.Point(198, 278);
+            this.txtCusID.Location = new System.Drawing.Point(198, 270);
             this.txtCusID.Name = "txtCusID";
             this.txtCusID.Size = new System.Drawing.Size(224, 22);
             this.txtCusID.TabIndex = 27;
@@ -191,7 +196,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(30, 278);
+            this.label9.Location = new System.Drawing.Point(30, 270);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(127, 25);
             this.label9.TabIndex = 26;
@@ -199,7 +204,7 @@
             // 
             // dtOrderDate
             // 
-            this.dtOrderDate.Location = new System.Drawing.Point(607, 217);
+            this.dtOrderDate.Location = new System.Drawing.Point(607, 202);
             this.dtOrderDate.Name = "dtOrderDate";
             this.dtOrderDate.Size = new System.Drawing.Size(230, 22);
             this.dtOrderDate.TabIndex = 25;
@@ -208,7 +213,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(468, 214);
+            this.label7.Location = new System.Drawing.Point(468, 200);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 25);
             this.label7.TabIndex = 24;
@@ -225,7 +230,7 @@
             "Cancelled",
             "Refunded",
             "Returned"});
-            this.cbStatus.Location = new System.Drawing.Point(584, 152);
+            this.cbStatus.Location = new System.Drawing.Point(584, 130);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(253, 24);
             this.cbStatus.TabIndex = 23;
@@ -237,27 +242,29 @@
             this.cbCustomer.Name = "cbCustomer";
             this.cbCustomer.Size = new System.Drawing.Size(221, 24);
             this.cbCustomer.TabIndex = 22;
+            this.cbCustomer.SelectedIndexChanged += new System.EventHandler(this.cbCustomer_SelectedIndexChanged);
             // 
-            // dataGridView2
+            // dataGridView1
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 409);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(876, 305);
-            this.dataGridView2.TabIndex = 14;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 409);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(876, 305);
+            this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(184, 214);
+            this.txtTotal.Location = new System.Drawing.Point(184, 200);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(238, 22);
             this.txtTotal.TabIndex = 11;
             // 
             // txtOID
             // 
-            this.txtOID.Location = new System.Drawing.Point(184, 156);
+            this.txtOID.Location = new System.Drawing.Point(171, 134);
             this.txtOID.Name = "txtOID";
             this.txtOID.Size = new System.Drawing.Size(273, 22);
             this.txtOID.TabIndex = 8;
@@ -269,12 +276,13 @@
             this.cbStaff.Name = "cbStaff";
             this.cbStaff.Size = new System.Drawing.Size(253, 24);
             this.cbStaff.TabIndex = 7;
+            this.cbStaff.SelectedIndexChanged += new System.EventHandler(this.cbStaff_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(481, 152);
+            this.label5.Location = new System.Drawing.Point(481, 131);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 25);
             this.label5.TabIndex = 4;
@@ -294,7 +302,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 156);
+            this.label3.Location = new System.Drawing.Point(30, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 25);
             this.label3.TabIndex = 2;
@@ -304,7 +312,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(30, 214);
+            this.label4.Location = new System.Drawing.Point(30, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 25);
             this.label4.TabIndex = 3;
@@ -314,7 +322,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(287, 55);
+            this.label1.Location = new System.Drawing.Point(268, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(357, 42);
             this.label1.TabIndex = 0;
@@ -363,11 +371,12 @@
             this.ClientSize = new System.Drawing.Size(1191, 717);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
             this.Name = "ORDER";
             this.Text = "ORDER";
+            this.Load += new System.EventHandler(this.ORDER_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -392,7 +401,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.ComboBox cbCustomer;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.TextBox txtOID;
         private System.Windows.Forms.ComboBox cbStaff;
