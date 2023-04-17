@@ -68,6 +68,7 @@
             this.txtCID.Name = "txtCID";
             this.txtCID.Size = new System.Drawing.Size(240, 22);
             this.txtCID.TabIndex = 23;
+            this.txtCID.TextChanged += new System.EventHandler(this.txtCID_TextChanged);
             // 
             // label9
             // 
@@ -78,6 +79,7 @@
             this.label9.Size = new System.Drawing.Size(138, 25);
             this.label9.TabIndex = 22;
             this.label9.Text = "Commune ID: ";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // btCancel
             // 
@@ -178,6 +180,7 @@
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(253, 22);
             this.txtSalary.TabIndex = 13;
+            this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             // 
             // txtStreet
             // 
@@ -185,6 +188,7 @@
             this.txtStreet.Name = "txtStreet";
             this.txtStreet.Size = new System.Drawing.Size(206, 22);
             this.txtStreet.TabIndex = 12;
+            this.txtStreet.TextChanged += new System.EventHandler(this.txtStreet_TextChanged);
             // 
             // txtPhone
             // 
@@ -192,6 +196,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(245, 22);
             this.txtPhone.TabIndex = 11;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // txtEmail
             // 
@@ -199,6 +204,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(251, 22);
             this.txtEmail.TabIndex = 10;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtSID
             // 
@@ -206,6 +212,7 @@
             this.txtSID.Name = "txtSID";
             this.txtSID.Size = new System.Drawing.Size(245, 22);
             this.txtSID.TabIndex = 9;
+            this.txtSID.TextChanged += new System.EventHandler(this.txtSID_TextChanged);
             // 
             // txtSName
             // 
@@ -213,6 +220,7 @@
             this.txtSName.Name = "txtSName";
             this.txtSName.Size = new System.Drawing.Size(253, 22);
             this.txtSName.TabIndex = 8;
+            this.txtSName.TextChanged += new System.EventHandler(this.txtSName_TextChanged);
             // 
             // cbCommune
             // 
@@ -232,6 +240,7 @@
             this.label7.Size = new System.Drawing.Size(79, 25);
             this.label7.TabIndex = 5;
             this.label7.Text = "Salary: ";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label5
             // 
@@ -242,6 +251,7 @@
             this.label5.Size = new System.Drawing.Size(70, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Street:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -252,6 +262,7 @@
             this.label6.Size = new System.Drawing.Size(138, 25);
             this.label6.TabIndex = 5;
             this.label6.Text = "Commune ID: ";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label3
             // 
@@ -262,6 +273,7 @@
             this.label3.Size = new System.Drawing.Size(120, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Staff Name: ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -272,6 +284,7 @@
             this.label4.Size = new System.Drawing.Size(80, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Phone: ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label1
             // 
@@ -282,6 +295,7 @@
             this.label1.Size = new System.Drawing.Size(423, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "STAFF INFORMATION";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -292,6 +306,7 @@
             this.label2.Size = new System.Drawing.Size(82, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Staff ID:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label8
             // 
@@ -302,6 +317,7 @@
             this.label8.Size = new System.Drawing.Size(71, 25);
             this.label8.TabIndex = 6;
             this.label8.Text = "Email: ";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // panel1
             // 
@@ -317,6 +333,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(288, 391);
             this.panel1.TabIndex = 24;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // panel2
             // 
@@ -342,6 +359,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(876, 391);
             this.panel2.TabIndex = 25;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -351,14 +369,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(287, 253);
             this.panel3.TabIndex = 26;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btAdd
             // 
+            this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
+            this.btAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btAdd.Location = new System.Drawing.Point(27, 23);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(104, 52);
             this.btAdd.TabIndex = 22;
             this.btAdd.Text = "Add";
+            this.btAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click_1);
             // 

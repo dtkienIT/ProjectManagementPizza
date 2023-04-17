@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 699);
+            this.ClientSize = new System.Drawing.Size(1075, 699);
             this.Name = "ORDER";
             this.Text = "ORDER";
             this.ResumeLayout(false);
