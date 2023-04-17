@@ -331,7 +331,7 @@
             this.panel1.Controls.Add(this.btReturn);
             this.panel1.Location = new System.Drawing.Point(894, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(288, 391);
+            this.panel1.Size = new System.Drawing.Size(291, 391);
             this.panel1.TabIndex = 24;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
@@ -367,7 +367,7 @@
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Location = new System.Drawing.Point(895, 410);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(287, 253);
+            this.panel3.Size = new System.Drawing.Size(290, 302);
             this.panel3.TabIndex = 26;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 

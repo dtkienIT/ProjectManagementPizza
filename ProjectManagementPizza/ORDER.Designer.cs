@@ -368,6 +368,8 @@
             // 
             // panel3
             // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Location = new System.Drawing.Point(894, 410);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(288, 295);
