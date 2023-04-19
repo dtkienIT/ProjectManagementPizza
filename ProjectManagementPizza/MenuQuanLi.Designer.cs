@@ -33,9 +33,9 @@
             this.createDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,16 +65,23 @@
             // createStaffToolStripMenuItem
             // 
             this.createStaffToolStripMenuItem.Name = "createStaffToolStripMenuItem";
-            this.createStaffToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.createStaffToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.createStaffToolStripMenuItem.Text = "Create Staff";
             this.createStaffToolStripMenuItem.Click += new System.EventHandler(this.createStaffToolStripMenuItem_Click);
             // 
             // createCustomerToolStripMenuItem
             // 
             this.createCustomerToolStripMenuItem.Name = "createCustomerToolStripMenuItem";
-            this.createCustomerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.createCustomerToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.createCustomerToolStripMenuItem.Text = "Create Customer";
             this.createCustomerToolStripMenuItem.Click += new System.EventHandler(this.createCustomerToolStripMenuItem_Click);
+            // 
+            // createOrderToolStripMenuItem
+            // 
+            this.createOrderToolStripMenuItem.Name = "createOrderToolStripMenuItem";
+            this.createOrderToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.createOrderToolStripMenuItem.Text = "Create Order";
+            this.createOrderToolStripMenuItem.Click += new System.EventHandler(this.createOrderToolStripMenuItem_Click);
             // 
             // returnToLoginToolStripMenuItem
             // 
@@ -89,13 +96,6 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // createOrderToolStripMenuItem
-            // 
-            this.createOrderToolStripMenuItem.Name = "createOrderToolStripMenuItem";
-            this.createOrderToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.createOrderToolStripMenuItem.Text = "Create Order";
-            this.createOrderToolStripMenuItem.Click += new System.EventHandler(this.createOrderToolStripMenuItem_Click);
             // 
             // MenuQuanLi
             // 
