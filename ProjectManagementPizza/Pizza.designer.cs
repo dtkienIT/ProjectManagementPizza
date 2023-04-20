@@ -48,9 +48,6 @@ namespace ProjectManagementPizza
     partial void Insertorder_detail(order_detail instance);
     partial void Updateorder_detail(order_detail instance);
     partial void Deleteorder_detail(order_detail instance);
-    partial void Insertpizza(pizza instance);
-    partial void Updatepizza(pizza instance);
-    partial void Deletepizza(pizza instance);
     partial void Insertprovince(province instance);
     partial void Updateprovince(province instance);
     partial void Deleteprovince(province instance);
@@ -63,6 +60,9 @@ namespace ProjectManagementPizza
     partial void Insertorder(order instance);
     partial void Updateorder(order instance);
     partial void Deleteorder(order instance);
+    partial void Insertpizza(pizza instance);
+    partial void Updatepizza(pizza instance);
+    partial void Deletepizza(pizza instance);
     partial void Insertproduct(product instance);
     partial void Updateproduct(product instance);
     partial void Deleteproduct(product instance);
@@ -146,14 +146,6 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		public System.Data.Linq.Table<pizza> pizzas
-		{
-			get
-			{
-				return this.GetTable<pizza>();
-			}
-		}
-		
 		public System.Data.Linq.Table<province> provinces
 		{
 			get
@@ -183,6 +175,14 @@ namespace ProjectManagementPizza
 			get
 			{
 				return this.GetTable<order>();
+			}
+		}
+		
+		public System.Data.Linq.Table<pizza> pizzas
+		{
+			get
+			{
+				return this.GetTable<pizza>();
 			}
 		}
 		
@@ -1324,253 +1324,6 @@ namespace ProjectManagementPizza
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.pizza")]
-	public partial class pizza : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _pizza_id;
-		
-		private string _pizza_name;
-		
-		private string _pizza_description;
-		
-		private decimal _price_small;
-		
-		private decimal _price_medium;
-		
-		private decimal _price_large;
-		
-		private System.Nullable<int> _category_id;
-		
-		private EntityRef<category> _category;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onpizza_idChanging(int value);
-    partial void Onpizza_idChanged();
-    partial void Onpizza_nameChanging(string value);
-    partial void Onpizza_nameChanged();
-    partial void Onpizza_descriptionChanging(string value);
-    partial void Onpizza_descriptionChanged();
-    partial void Onprice_smallChanging(decimal value);
-    partial void Onprice_smallChanged();
-    partial void Onprice_mediumChanging(decimal value);
-    partial void Onprice_mediumChanged();
-    partial void Onprice_largeChanging(decimal value);
-    partial void Onprice_largeChanged();
-    partial void Oncategory_idChanging(System.Nullable<int> value);
-    partial void Oncategory_idChanged();
-    #endregion
-		
-		public pizza()
-		{
-			this._category = default(EntityRef<category>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pizza_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int pizza_id
-		{
-			get
-			{
-				return this._pizza_id;
-			}
-			set
-			{
-				if ((this._pizza_id != value))
-				{
-					this.Onpizza_idChanging(value);
-					this.SendPropertyChanging();
-					this._pizza_id = value;
-					this.SendPropertyChanged("pizza_id");
-					this.Onpizza_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pizza_name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string pizza_name
-		{
-			get
-			{
-				return this._pizza_name;
-			}
-			set
-			{
-				if ((this._pizza_name != value))
-				{
-					this.Onpizza_nameChanging(value);
-					this.SendPropertyChanging();
-					this._pizza_name = value;
-					this.SendPropertyChanged("pizza_name");
-					this.Onpizza_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pizza_description", DbType="VarChar(255)")]
-		public string pizza_description
-		{
-			get
-			{
-				return this._pizza_description;
-			}
-			set
-			{
-				if ((this._pizza_description != value))
-				{
-					this.Onpizza_descriptionChanging(value);
-					this.SendPropertyChanging();
-					this._pizza_description = value;
-					this.SendPropertyChanged("pizza_description");
-					this.Onpizza_descriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price_small", DbType="Decimal(10,2) NOT NULL")]
-		public decimal price_small
-		{
-			get
-			{
-				return this._price_small;
-			}
-			set
-			{
-				if ((this._price_small != value))
-				{
-					this.Onprice_smallChanging(value);
-					this.SendPropertyChanging();
-					this._price_small = value;
-					this.SendPropertyChanged("price_small");
-					this.Onprice_smallChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price_medium", DbType="Decimal(10,2) NOT NULL")]
-		public decimal price_medium
-		{
-			get
-			{
-				return this._price_medium;
-			}
-			set
-			{
-				if ((this._price_medium != value))
-				{
-					this.Onprice_mediumChanging(value);
-					this.SendPropertyChanging();
-					this._price_medium = value;
-					this.SendPropertyChanged("price_medium");
-					this.Onprice_mediumChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price_large", DbType="Decimal(10,2) NOT NULL")]
-		public decimal price_large
-		{
-			get
-			{
-				return this._price_large;
-			}
-			set
-			{
-				if ((this._price_large != value))
-				{
-					this.Onprice_largeChanging(value);
-					this.SendPropertyChanging();
-					this._price_large = value;
-					this.SendPropertyChanged("price_large");
-					this.Onprice_largeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_category_id", DbType="Int")]
-		public System.Nullable<int> category_id
-		{
-			get
-			{
-				return this._category_id;
-			}
-			set
-			{
-				if ((this._category_id != value))
-				{
-					if (this._category.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Oncategory_idChanging(value);
-					this.SendPropertyChanging();
-					this._category_id = value;
-					this.SendPropertyChanged("category_id");
-					this.Oncategory_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="category_pizza", Storage="_category", ThisKey="category_id", OtherKey="category_id", IsForeignKey=true)]
-		public category category
-		{
-			get
-			{
-				return this._category.Entity;
-			}
-			set
-			{
-				category previousValue = this._category.Entity;
-				if (((previousValue != value) 
-							|| (this._category.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._category.Entity = null;
-						previousValue.pizzas.Remove(this);
-					}
-					this._category.Entity = value;
-					if ((value != null))
-					{
-						value.pizzas.Add(this);
-						this._category_id = value.category_id;
-					}
-					else
-					{
-						this._category_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("category");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.province")]
 	public partial class province : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1974,6 +1727,8 @@ namespace ProjectManagementPizza
 		
 		private string _commune_id;
 		
+		private EntitySet<pizza> _pizzas;
+		
 		private EntityRef<commune> _commune;
 		
     #region Extensibility Method Definitions
@@ -1992,6 +1747,7 @@ namespace ProjectManagementPizza
 		
 		public warehouse()
 		{
+			this._pizzas = new EntitySet<pizza>(new Action<pizza>(this.attach_pizzas), new Action<pizza>(this.detach_pizzas));
 			this._commune = default(EntityRef<commune>);
 			OnCreated();
 		}
@@ -2080,6 +1836,19 @@ namespace ProjectManagementPizza
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="warehouse_pizza", Storage="_pizzas", ThisKey="warehouse_id", OtherKey="warehouse_id")]
+		public EntitySet<pizza> pizzas
+		{
+			get
+			{
+				return this._pizzas;
+			}
+			set
+			{
+				this._pizzas.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="commune_warehouse", Storage="_commune", ThisKey="commune_id", OtherKey="commune_id", IsForeignKey=true)]
 		public commune commune
 		{
@@ -2132,6 +1901,18 @@ namespace ProjectManagementPizza
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_pizzas(pizza entity)
+		{
+			this.SendPropertyChanging();
+			entity.warehouse = this;
+		}
+		
+		private void detach_pizzas(pizza entity)
+		{
+			this.SendPropertyChanging();
+			entity.warehouse = null;
 		}
 	}
 	
@@ -2427,6 +2208,318 @@ namespace ProjectManagementPizza
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.pizza")]
+	public partial class pizza : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _pizza_id;
+		
+		private string _pizza_name;
+		
+		private string _pizza_description;
+		
+		private decimal _price_small;
+		
+		private decimal _price_medium;
+		
+		private decimal _price_large;
+		
+		private System.Nullable<int> _category_id;
+		
+		private System.Nullable<int> _warehouse_id;
+		
+		private EntityRef<category> _category;
+		
+		private EntityRef<warehouse> _warehouse;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onpizza_idChanging(int value);
+    partial void Onpizza_idChanged();
+    partial void Onpizza_nameChanging(string value);
+    partial void Onpizza_nameChanged();
+    partial void Onpizza_descriptionChanging(string value);
+    partial void Onpizza_descriptionChanged();
+    partial void Onprice_smallChanging(decimal value);
+    partial void Onprice_smallChanged();
+    partial void Onprice_mediumChanging(decimal value);
+    partial void Onprice_mediumChanged();
+    partial void Onprice_largeChanging(decimal value);
+    partial void Onprice_largeChanged();
+    partial void Oncategory_idChanging(System.Nullable<int> value);
+    partial void Oncategory_idChanged();
+    partial void Onwarehouse_idChanging(System.Nullable<int> value);
+    partial void Onwarehouse_idChanged();
+    #endregion
+		
+		public pizza()
+		{
+			this._category = default(EntityRef<category>);
+			this._warehouse = default(EntityRef<warehouse>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pizza_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int pizza_id
+		{
+			get
+			{
+				return this._pizza_id;
+			}
+			set
+			{
+				if ((this._pizza_id != value))
+				{
+					this.Onpizza_idChanging(value);
+					this.SendPropertyChanging();
+					this._pizza_id = value;
+					this.SendPropertyChanged("pizza_id");
+					this.Onpizza_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pizza_name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string pizza_name
+		{
+			get
+			{
+				return this._pizza_name;
+			}
+			set
+			{
+				if ((this._pizza_name != value))
+				{
+					this.Onpizza_nameChanging(value);
+					this.SendPropertyChanging();
+					this._pizza_name = value;
+					this.SendPropertyChanged("pizza_name");
+					this.Onpizza_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pizza_description", DbType="VarChar(255)")]
+		public string pizza_description
+		{
+			get
+			{
+				return this._pizza_description;
+			}
+			set
+			{
+				if ((this._pizza_description != value))
+				{
+					this.Onpizza_descriptionChanging(value);
+					this.SendPropertyChanging();
+					this._pizza_description = value;
+					this.SendPropertyChanged("pizza_description");
+					this.Onpizza_descriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price_small", DbType="Decimal(10,2) NOT NULL")]
+		public decimal price_small
+		{
+			get
+			{
+				return this._price_small;
+			}
+			set
+			{
+				if ((this._price_small != value))
+				{
+					this.Onprice_smallChanging(value);
+					this.SendPropertyChanging();
+					this._price_small = value;
+					this.SendPropertyChanged("price_small");
+					this.Onprice_smallChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price_medium", DbType="Decimal(10,2) NOT NULL")]
+		public decimal price_medium
+		{
+			get
+			{
+				return this._price_medium;
+			}
+			set
+			{
+				if ((this._price_medium != value))
+				{
+					this.Onprice_mediumChanging(value);
+					this.SendPropertyChanging();
+					this._price_medium = value;
+					this.SendPropertyChanged("price_medium");
+					this.Onprice_mediumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price_large", DbType="Decimal(10,2) NOT NULL")]
+		public decimal price_large
+		{
+			get
+			{
+				return this._price_large;
+			}
+			set
+			{
+				if ((this._price_large != value))
+				{
+					this.Onprice_largeChanging(value);
+					this.SendPropertyChanging();
+					this._price_large = value;
+					this.SendPropertyChanged("price_large");
+					this.Onprice_largeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_category_id", DbType="Int")]
+		public System.Nullable<int> category_id
+		{
+			get
+			{
+				return this._category_id;
+			}
+			set
+			{
+				if ((this._category_id != value))
+				{
+					if (this._category.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncategory_idChanging(value);
+					this.SendPropertyChanging();
+					this._category_id = value;
+					this.SendPropertyChanged("category_id");
+					this.Oncategory_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_warehouse_id", DbType="Int")]
+		public System.Nullable<int> warehouse_id
+		{
+			get
+			{
+				return this._warehouse_id;
+			}
+			set
+			{
+				if ((this._warehouse_id != value))
+				{
+					if (this._warehouse.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onwarehouse_idChanging(value);
+					this.SendPropertyChanging();
+					this._warehouse_id = value;
+					this.SendPropertyChanged("warehouse_id");
+					this.Onwarehouse_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="category_pizza", Storage="_category", ThisKey="category_id", OtherKey="category_id", IsForeignKey=true)]
+		public category category
+		{
+			get
+			{
+				return this._category.Entity;
+			}
+			set
+			{
+				category previousValue = this._category.Entity;
+				if (((previousValue != value) 
+							|| (this._category.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._category.Entity = null;
+						previousValue.pizzas.Remove(this);
+					}
+					this._category.Entity = value;
+					if ((value != null))
+					{
+						value.pizzas.Add(this);
+						this._category_id = value.category_id;
+					}
+					else
+					{
+						this._category_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("category");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="warehouse_pizza", Storage="_warehouse", ThisKey="warehouse_id", OtherKey="warehouse_id", IsForeignKey=true)]
+		public warehouse warehouse
+		{
+			get
+			{
+				return this._warehouse.Entity;
+			}
+			set
+			{
+				warehouse previousValue = this._warehouse.Entity;
+				if (((previousValue != value) 
+							|| (this._warehouse.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._warehouse.Entity = null;
+						previousValue.pizzas.Remove(this);
+					}
+					this._warehouse.Entity = value;
+					if ((value != null))
+					{
+						value.pizzas.Add(this);
+						this._warehouse_id = value.warehouse_id;
+					}
+					else
+					{
+						this._warehouse_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("warehouse");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.product")]
 	public partial class product : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2442,6 +2535,8 @@ namespace ProjectManagementPizza
 		private string _description;
 		
 		private System.Data.Linq.Binary _image;
+		
+		private bool _status;
 		
 		private EntitySet<order_detail> _order_details;
 		
@@ -2459,6 +2554,8 @@ namespace ProjectManagementPizza
     partial void OndescriptionChanged();
     partial void OnimageChanging(System.Data.Linq.Binary value);
     partial void OnimageChanged();
+    partial void OnstatusChanging(bool value);
+    partial void OnstatusChanged();
     #endregion
 		
 		public product()
@@ -2563,6 +2660,26 @@ namespace ProjectManagementPizza
 					this._image = value;
 					this.SendPropertyChanged("image");
 					this.OnimageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Bit NOT NULL")]
+		public bool status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
 				}
 			}
 		}

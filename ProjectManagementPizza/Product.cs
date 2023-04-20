@@ -99,7 +99,7 @@ namespace ProjectManagementPizza
                 unit_price = int.Parse(txtP.Text),
                 description = txtD.Text,
                 image = ImageToByteArray(pictureBox.Image), // chuyển đổi hình ảnh thành mảng byte
-                status = checkStatus
+            status = checkStatus
             });
             db.SubmitChanges();
             MySetProductInDataGridView();
@@ -110,7 +110,7 @@ namespace ProjectManagementPizza
             // Sự kiện CellFormatting để hiển thị hình ảnh từ dữ liệu kiểu byte
             private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dtGridView.Columns[e.ColumnIndex].Name == "Image" && e.Value != null)
+            if (dtGridView.Columns[e.ColumnIndex].Name == "image" && e.Value != null)
             {
                 byte[] imageData = (byte[])e.Value;
                 using (MemoryStream ms = new MemoryStream(imageData))

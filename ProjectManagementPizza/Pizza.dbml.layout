@@ -33,7 +33,7 @@
         <elementListCompartment Id="bad69b9f-3ede-431a-8a7c-a0a438607ef3" absoluteBounds="10.39, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(10.375 : 4.94314697265625); (9.64583333333333 : 4.94314697265625 : JumpStart); (9.47916666666667 : 4.94314697265625 : JumpEnd); (9 : 4.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(10.375 : 4.94314697265625); (9 : 4.94314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/PizzaDataContext/district/district_commune" />
       <nodes>
         <classShapeMoniker Id="f8ee69c0-7780-48a8-95de-a4371ec2e270" />
@@ -104,7 +104,7 @@
         <classShapeMoniker Id="22fbc424-ff67-4226-bff0-50f54c8be906" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(6.40625 : 3.5881982421875); (6.40625 : 10.2315991210937); (4.125 : 10.2315991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.59375 : 3.5881982421875); (6.59375 : 10.2315991210937); (4.125 : 10.2315991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PizzaDataContext/customer/customer_order" />
       <nodes>
         <classShapeMoniker Id="fd5afa3b-c8c2-4b99-ae88-69f6638bf7f2" />
@@ -131,23 +131,23 @@
         <classShapeMoniker Id="8ca26c6a-4c95-447f-a35c-dc6625757e4a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.5625 : 7.875); (9.5625 : 3.66909912109375); (8.08333333333333 : 3.66909912109375 : JumpStart); (7.91666666666667 : 3.66909912109375 : JumpEnd); (2.75 : 3.66909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.5625 : 7.875); (9.5625 : 3.66909912109375); (2.75 : 3.66909912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/PizzaDataContext/warehouse/warehouse_pizza" />
       <nodes>
         <classShapeMoniker Id="ba248f8d-92bc-41a5-94df-3e8192ba64ec" />
         <classShapeMoniker Id="8ca26c6a-4c95-447f-a35c-dc6625757e4a" />
       </nodes>
     </associationConnector>
-    <classShape Id="6d215923-a124-425d-9b54-b408b6e2e45e" absoluteBounds="3.875, 4.375, 2, 1.9631982421875">
+    <classShape Id="9fbf9c4f-46f4-4699-972e-a2018a7c41e8" absoluteBounds="4.25, 5.25, 2, 1.9631982421875">
       <DataClassMoniker Name="/PizzaDataContext/product" />
       <nestedChildShapes>
-        <elementListCompartment Id="7d4e3ada-c56e-45fd-8f01-2c0d62228dbc" absoluteBounds="3.8899999999999997, 4.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3ed4a726-7a9e-42a1-87f1-a4c916013b32" absoluteBounds="4.265, 5.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.875 : 6.04409912109375); (3.25 : 6.04409912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.25 : 6.48159912109375); (3.25 : 6.48159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PizzaDataContext/product/product_order_detail" />
       <nodes>
-        <classShapeMoniker Id="6d215923-a124-425d-9b54-b408b6e2e45e" />
+        <classShapeMoniker Id="9fbf9c4f-46f4-4699-972e-a2018a7c41e8" />
         <classShapeMoniker Id="22fbc424-ff67-4226-bff0-50f54c8be906" />
       </nodes>
     </associationConnector>
