@@ -89,33 +89,7 @@ namespace ProjectManagementPizza
 
         }
 
-        private void btAdd_Click(object sender, EventArgs e)
-        {
-            if (checking() == true)
-            {
-                db.staffs.InsertOnSubmit(new staff
-                {
-                    staff_id = Convert.ToInt32(txtSID.Text),
-
-                    staff_name = txtSName.Text,
-
-                    phone_number = txtPhone.Text,
-
-                    email = txtEmail.Text,
-
-                    street = txtStreet.Text,
-
-                    salary = Convert.ToDecimal(txtSalary.Text),
-                    commune_id = cbCommune.Text,
-                });
-                db.SubmitChanges();
-                MyCommune();
-                MyStaff();
-                resetall();
-                MessageBox.Show("Nhap du lieu thanh cong! ");
-            }
-            else { }
-        }
+        
 
         private void btCancel_Click_1(object sender, EventArgs e)
         {

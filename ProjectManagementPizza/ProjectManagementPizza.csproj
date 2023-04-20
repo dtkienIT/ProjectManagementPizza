@@ -71,6 +71,9 @@
     <Compile Include="ORDER.Designer.cs">
       <DependentUpon>ORDER.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pizza.cs">
+      <DependentUpon>Pizza.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Pizza.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
