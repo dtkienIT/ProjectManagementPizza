@@ -179,9 +179,9 @@ namespace ProjectManagementPizza
 
                 o.order_id = Convert.ToInt32(txtOID.Text);
 
-                o.customer_id = Convert.ToInt32(txtCusID.Text);
+               
 
-                o.staff_id = Convert.ToInt32(txtSID.Text);
+                
 
                 o.order_date = dtOrderDate.Value;
 

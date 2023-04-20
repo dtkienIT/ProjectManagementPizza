@@ -51,9 +51,6 @@ namespace ProjectManagementPizza
     partial void Insertpizza(pizza instance);
     partial void Updatepizza(pizza instance);
     partial void Deletepizza(pizza instance);
-    partial void Insertproduct(product instance);
-    partial void Updateproduct(product instance);
-    partial void Deleteproduct(product instance);
     partial void Insertprovince(province instance);
     partial void Updateprovince(province instance);
     partial void Deleteprovince(province instance);
@@ -66,6 +63,9 @@ namespace ProjectManagementPizza
     partial void Insertorder(order instance);
     partial void Updateorder(order instance);
     partial void Deleteorder(order instance);
+    partial void Insertproduct(product instance);
+    partial void Updateproduct(product instance);
+    partial void Deleteproduct(product instance);
     #endregion
 		
 		public PizzaDataContext() : 
@@ -154,14 +154,6 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		public System.Data.Linq.Table<product> products
-		{
-			get
-			{
-				return this.GetTable<product>();
-			}
-		}
-		
 		public System.Data.Linq.Table<province> provinces
 		{
 			get
@@ -191,6 +183,14 @@ namespace ProjectManagementPizza
 			get
 			{
 				return this.GetTable<order>();
+			}
+		}
+		
+		public System.Data.Linq.Table<product> products
+		{
+			get
+			{
+				return this.GetTable<product>();
 			}
 		}
 	}
@@ -1100,9 +1100,9 @@ namespace ProjectManagementPizza
 		
 		private decimal _unit_price;
 		
-		private EntityRef<product> _product;
-		
 		private EntityRef<order> _order;
+		
+		private EntityRef<product> _product;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1122,8 +1122,8 @@ namespace ProjectManagementPizza
 		
 		public order_detail()
 		{
-			this._product = default(EntityRef<product>);
 			this._order = default(EntityRef<order>);
+			this._product = default(EntityRef<product>);
 			OnCreated();
 		}
 		
@@ -1235,40 +1235,6 @@ namespace ProjectManagementPizza
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_order_detail", Storage="_product", ThisKey="product_id", OtherKey="product_id", IsForeignKey=true)]
-		public product product
-		{
-			get
-			{
-				return this._product.Entity;
-			}
-			set
-			{
-				product previousValue = this._product.Entity;
-				if (((previousValue != value) 
-							|| (this._product.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._product.Entity = null;
-						previousValue.order_details.Remove(this);
-					}
-					this._product.Entity = value;
-					if ((value != null))
-					{
-						value.order_details.Add(this);
-						this._product_id = value.product_id;
-					}
-					else
-					{
-						this._product_id = default(int);
-					}
-					this.SendPropertyChanged("product");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="order_order_detail", Storage="_order", ThisKey="order_id", OtherKey="order_id", IsForeignKey=true)]
 		public order order
 		{
@@ -1299,6 +1265,40 @@ namespace ProjectManagementPizza
 						this._order_id = default(int);
 					}
 					this.SendPropertyChanged("order");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_order_detail", Storage="_product", ThisKey="product_id", OtherKey="product_id", IsForeignKey=true)]
+		public product product
+		{
+			get
+			{
+				return this._product.Entity;
+			}
+			set
+			{
+				product previousValue = this._product.Entity;
+				if (((previousValue != value) 
+							|| (this._product.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._product.Entity = null;
+						previousValue.order_details.Remove(this);
+					}
+					this._product.Entity = value;
+					if ((value != null))
+					{
+						value.order_details.Add(this);
+						this._product_id = value.product_id;
+					}
+					else
+					{
+						this._product_id = default(int);
+					}
+					this.SendPropertyChanged("product");
 				}
 			}
 		}
@@ -1568,168 +1568,6 @@ namespace ProjectManagementPizza
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.product")]
-	public partial class product : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _product_id;
-		
-		private string _product_name;
-		
-		private decimal _unit_price;
-		
-		private string _description;
-		
-		private EntitySet<order_detail> _order_details;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onproduct_idChanging(int value);
-    partial void Onproduct_idChanged();
-    partial void Onproduct_nameChanging(string value);
-    partial void Onproduct_nameChanged();
-    partial void Onunit_priceChanging(decimal value);
-    partial void Onunit_priceChanged();
-    partial void OndescriptionChanging(string value);
-    partial void OndescriptionChanged();
-    #endregion
-		
-		public product()
-		{
-			this._order_details = new EntitySet<order_detail>(new Action<order_detail>(this.attach_order_details), new Action<order_detail>(this.detach_order_details));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int product_id
-		{
-			get
-			{
-				return this._product_id;
-			}
-			set
-			{
-				if ((this._product_id != value))
-				{
-					this.Onproduct_idChanging(value);
-					this.SendPropertyChanging();
-					this._product_id = value;
-					this.SendPropertyChanged("product_id");
-					this.Onproduct_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string product_name
-		{
-			get
-			{
-				return this._product_name;
-			}
-			set
-			{
-				if ((this._product_name != value))
-				{
-					this.Onproduct_nameChanging(value);
-					this.SendPropertyChanging();
-					this._product_name = value;
-					this.SendPropertyChanged("product_name");
-					this.Onproduct_nameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unit_price", DbType="Decimal(10,2) NOT NULL")]
-		public decimal unit_price
-		{
-			get
-			{
-				return this._unit_price;
-			}
-			set
-			{
-				if ((this._unit_price != value))
-				{
-					this.Onunit_priceChanging(value);
-					this.SendPropertyChanging();
-					this._unit_price = value;
-					this.SendPropertyChanged("unit_price");
-					this.Onunit_priceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(500)")]
-		public string description
-		{
-			get
-			{
-				return this._description;
-			}
-			set
-			{
-				if ((this._description != value))
-				{
-					this.OndescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._description = value;
-					this.SendPropertyChanged("description");
-					this.OndescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_order_detail", Storage="_order_details", ThisKey="product_id", OtherKey="product_id")]
-		public EntitySet<order_detail> order_details
-		{
-			get
-			{
-				return this._order_details;
-			}
-			set
-			{
-				this._order_details.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_order_details(order_detail entity)
-		{
-			this.SendPropertyChanging();
-			entity.product = this;
-		}
-		
-		private void detach_order_details(order_detail entity)
-		{
-			this.SendPropertyChanging();
-			entity.product = null;
 		}
 	}
 	
@@ -2586,6 +2424,192 @@ namespace ProjectManagementPizza
 		{
 			this.SendPropertyChanging();
 			entity.order = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.product")]
+	public partial class product : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _product_id;
+		
+		private string _product_name;
+		
+		private decimal _unit_price;
+		
+		private string _description;
+		
+		private System.Data.Linq.Binary _image;
+		
+		private EntitySet<order_detail> _order_details;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onproduct_idChanging(int value);
+    partial void Onproduct_idChanged();
+    partial void Onproduct_nameChanging(string value);
+    partial void Onproduct_nameChanged();
+    partial void Onunit_priceChanging(decimal value);
+    partial void Onunit_priceChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
+    partial void OnimageChanging(System.Data.Linq.Binary value);
+    partial void OnimageChanged();
+    #endregion
+		
+		public product()
+		{
+			this._order_details = new EntitySet<order_detail>(new Action<order_detail>(this.attach_order_details), new Action<order_detail>(this.detach_order_details));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int product_id
+		{
+			get
+			{
+				return this._product_id;
+			}
+			set
+			{
+				if ((this._product_id != value))
+				{
+					this.Onproduct_idChanging(value);
+					this.SendPropertyChanging();
+					this._product_id = value;
+					this.SendPropertyChanged("product_id");
+					this.Onproduct_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_product_name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string product_name
+		{
+			get
+			{
+				return this._product_name;
+			}
+			set
+			{
+				if ((this._product_name != value))
+				{
+					this.Onproduct_nameChanging(value);
+					this.SendPropertyChanging();
+					this._product_name = value;
+					this.SendPropertyChanged("product_name");
+					this.Onproduct_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_unit_price", DbType="Decimal(10,2) NOT NULL")]
+		public decimal unit_price
+		{
+			get
+			{
+				return this._unit_price;
+			}
+			set
+			{
+				if ((this._unit_price != value))
+				{
+					this.Onunit_priceChanging(value);
+					this.SendPropertyChanging();
+					this._unit_price = value;
+					this.SendPropertyChanged("unit_price");
+					this.Onunit_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(500)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this.OndescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._description = value;
+					this.SendPropertyChanged("description");
+					this.OndescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_image", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary image
+		{
+			get
+			{
+				return this._image;
+			}
+			set
+			{
+				if ((this._image != value))
+				{
+					this.OnimageChanging(value);
+					this.SendPropertyChanging();
+					this._image = value;
+					this.SendPropertyChanged("image");
+					this.OnimageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="product_order_detail", Storage="_order_details", ThisKey="product_id", OtherKey="product_id")]
+		public EntitySet<order_detail> order_details
+		{
+			get
+			{
+				return this._order_details;
+			}
+			set
+			{
+				this._order_details.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_order_details(order_detail entity)
+		{
+			this.SendPropertyChanging();
+			entity.product = this;
+		}
+		
+		private void detach_order_details(order_detail entity)
+		{
+			this.SendPropertyChanging();
+			entity.product = null;
 		}
 	}
 }

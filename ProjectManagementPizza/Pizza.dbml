@@ -53,8 +53,8 @@
       <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="unit_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
-      <Association Name="product_order_detail" Member="product" ThisKey="product_id" OtherKey="product_id" Type="product" IsForeignKey="true" />
       <Association Name="order_order_detail" Member="order" ThisKey="order_id" OtherKey="order_id" Type="order" IsForeignKey="true" />
+      <Association Name="product_order_detail" Member="product" ThisKey="product_id" OtherKey="product_id" Type="product" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.pizza" Member="pizzas">
@@ -67,15 +67,6 @@
       <Column Name="price_large" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
       <Column Name="category_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="category_pizza" Member="category" ThisKey="category_id" OtherKey="category_id" Type="category" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.product" Member="products">
-    <Type Name="product">
-      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="product_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="unit_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
-      <Column Name="description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="product_order_detail" Member="order_details" ThisKey="product_id" OtherKey="product_id" Type="order_detail" />
     </Type>
   </Table>
   <Table Name="dbo.province" Member="provinces">
@@ -118,6 +109,16 @@
       <Association Name="order_order_detail" Member="order_details" ThisKey="order_id" OtherKey="order_id" Type="order_detail" />
       <Association Name="customer_order" Member="customer" ThisKey="customer_id" OtherKey="customer_id" Type="customer" IsForeignKey="true" />
       <Association Name="staff_order" Member="staff" ThisKey="staff_id" OtherKey="staff_id" Type="staff" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.product" Member="products">
+    <Type Name="product">
+      <Column Name="product_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="unit_price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="product_order_detail" Member="order_details" ThisKey="product_id" OtherKey="product_id" Type="order_detail" />
     </Type>
   </Table>
 </Database>

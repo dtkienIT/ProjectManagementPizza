@@ -54,9 +54,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btAdd = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -64,9 +65,9 @@
             // 
             // txtCID
             // 
-            this.txtCID.Location = new System.Drawing.Point(604, 254);
+            this.txtCID.Location = new System.Drawing.Point(644, 254);
             this.txtCID.Name = "txtCID";
-            this.txtCID.Size = new System.Drawing.Size(240, 22);
+            this.txtCID.Size = new System.Drawing.Size(200, 22);
             this.txtCID.TabIndex = 23;
             this.txtCID.TextChanged += new System.EventHandler(this.txtCID_TextChanged);
             // 
@@ -76,9 +77,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(428, 249);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(138, 25);
+            this.label9.Size = new System.Drawing.Size(195, 25);
             this.label9.TabIndex = 22;
-            this.label9.Text = "Commune ID: ";
+            this.label9.Text = "Search Commune ID";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // btCancel
@@ -322,6 +323,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.btAdd);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btEdit);
@@ -334,6 +336,19 @@
             this.panel1.Size = new System.Drawing.Size(291, 391);
             this.panel1.TabIndex = 24;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // btAdd
+            // 
+            this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
+            this.btAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btAdd.Location = new System.Drawing.Point(27, 23);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(104, 52);
+            this.btAdd.TabIndex = 22;
+            this.btAdd.Text = "Add";
+            this.btAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click_1);
             // 
             // panel2
             // 
@@ -371,18 +386,18 @@
             this.panel3.TabIndex = 26;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // btAdd
+            // button2
             // 
-            this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
-            this.btAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btAdd.Location = new System.Drawing.Point(27, 23);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(104, 52);
-            this.btAdd.TabIndex = 22;
-            this.btAdd.Text = "Add";
-            this.btAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click_1);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(32, 274);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 47);
+            this.button2.TabIndex = 23;
+            this.button2.Text = " Delete";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Staff
             // 
@@ -435,5 +450,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button button2;
     }
 }

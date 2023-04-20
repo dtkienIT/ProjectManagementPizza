@@ -138,7 +138,9 @@ namespace ProjectManagementPizza
                 s.street = txtStreet.Text;
 
                 s.salary = Convert.ToDecimal(txtSalary.Text);
+
                 s.commune_id = txtCID.Text;
+
                 db.SubmitChanges();
                 MessageBox.Show("Nhap thanh cong!");
             }
@@ -194,6 +196,7 @@ namespace ProjectManagementPizza
                     street = txtStreet.Text,
 
                     salary = Convert.ToDecimal(txtSalary.Text),
+
                     commune_id = cbCommune.Text,
                 });
                 db.SubmitChanges();
