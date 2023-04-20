@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProjectManagementPizza
@@ -66,8 +67,6 @@ namespace ProjectManagementPizza
         private void Staff_Load(object sender, EventArgs e)
         {
             MyCommune();
-            List<string> searchOptions = new List<string> { "Commune ID"};
-            cbCommune.Items.AddRange(searchOptions.ToArray());
         }
 
         public void resetall()
@@ -174,9 +173,14 @@ namespace ProjectManagementPizza
             txtSalary.Text = dataGridView1.Rows[r].Cells[6].Value.ToString();
         }
 
+        private string selectedCommune = "";
         private void cbCommune_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MyStaff();
+            if (cbCommune.Text != selectedCommune)
+            {
+                selectedCommune = cbCommune.Text;
+                MyStaff();
+            }
         }
 
         private void btAdd_Click_1(object sender, EventArgs e)
@@ -198,7 +202,9 @@ namespace ProjectManagementPizza
                     salary = Convert.ToDecimal(txtSalary.Text),
 
                     commune_id = cbCommune.Text,
-                });
+                    
+            });
+                cbCommune.Items.Clear();
                 db.SubmitChanges();
                 MyCommune();
                 MyStaff();

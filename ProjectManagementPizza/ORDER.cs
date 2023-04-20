@@ -123,6 +123,8 @@ namespace ProjectManagementPizza
 
                     status = cbStatus.Text,
                 });
+                cbStaff.Items.Clear();
+                cbCustomer.Items.Clear();
                 db.SubmitChanges();
                 MyOrder();
                 MyStaff();
