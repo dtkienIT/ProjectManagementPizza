@@ -269,6 +269,11 @@ namespace ProjectManagementPizza
                 dtGridView.DataSource = query;
             
         }
+
+        private void cbSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
         
