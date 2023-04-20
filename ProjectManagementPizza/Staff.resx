@@ -185,16 +185,6 @@
         QmCC
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAPBJREFUSEvtlKESwjAQBauQSCQSiUQikUgkEomsxCH5BCQSiUQi+QwkEg1vMzxX
-        AtdODdOd2ZmmXC5HcmnR0YS+3MijPMvTezySjZnJm3xW+JArWZu5dDKqXsip5P1B+rdShhlIV77mRQUu
-        gH8S3q6tZDKV5thJ4vZpFIAtYSJV5hhL4q5pFMDbw1Z9gzgMcZFM4lBzDCVx9zQK4L3lLHLQAMRRUIiJ
-        ZCIdwnMVVE/lxNHCYbitXoRe93lws7lgTk5D1KInaT+SfNJnRRexcC34XPANcsVOvJTg940WycFd6Bb5
-        GS+CPLcCiVtL/rcUxQsUfVOJoWaIKQAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="btAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
