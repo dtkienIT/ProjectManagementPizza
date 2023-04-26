@@ -37,7 +37,7 @@
             this.txtcheck = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btsend = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCapcha = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -119,7 +119,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btsend);
             this.panel1.Controls.Add(this.btHuyBo);
             this.panel1.Controls.Add(this.btXacNhan);
             this.panel1.Controls.Add(this.txtMK);
@@ -136,14 +136,15 @@
             this.panel1.Size = new System.Drawing.Size(711, 460);
             this.panel1.TabIndex = 22;
             // 
-            // button1
+            // btsend
             // 
-            this.button1.Location = new System.Drawing.Point(556, 298);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 37);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Send";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btsend.Location = new System.Drawing.Point(556, 298);
+            this.btsend.Name = "btsend";
+            this.btsend.Size = new System.Drawing.Size(60, 37);
+            this.btsend.TabIndex = 24;
+            this.btsend.Text = "Send";
+            this.btsend.UseVisualStyleBackColor = true;
+            this.btsend.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -188,7 +189,7 @@
         private System.Windows.Forms.TextBox txtcheck;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btsend;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCapcha;
     }
