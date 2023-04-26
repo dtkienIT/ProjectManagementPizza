@@ -107,9 +107,9 @@
             this.btEdit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btEdit.Image = ((System.Drawing.Image)(resources.GetObject("btEdit.Image")));
             this.btEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btEdit.Location = new System.Drawing.Point(27, 114);
+            this.btEdit.Location = new System.Drawing.Point(27, 100);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(104, 55);
+            this.btEdit.Size = new System.Drawing.Size(108, 55);
             this.btEdit.TabIndex = 16;
             this.btEdit.Text = "Edit  ";
             this.btEdit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -120,7 +120,7 @@
             // 
             this.btSave.Image = ((System.Drawing.Image)(resources.GetObject("btSave.Image")));
             this.btSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSave.Location = new System.Drawing.Point(158, 114);
+            this.btSave.Location = new System.Drawing.Point(158, 100);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(97, 55);
             this.btSave.TabIndex = 17;
@@ -133,7 +133,7 @@
             // 
             this.btDelete.Image = ((System.Drawing.Image)(resources.GetObject("btDelete.Image")));
             this.btDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btDelete.Location = new System.Drawing.Point(158, 202);
+            this.btDelete.Location = new System.Drawing.Point(158, 192);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(103, 47);
             this.btDelete.TabIndex = 18;
@@ -147,7 +147,7 @@
             this.btCancel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btCancel.Image = ((System.Drawing.Image)(resources.GetObject("btCancel.Image")));
             this.btCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btCancel.Location = new System.Drawing.Point(27, 202);
+            this.btCancel.Location = new System.Drawing.Point(31, 192);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(104, 47);
             this.btCancel.TabIndex = 21;
@@ -161,7 +161,7 @@
             this.btReturn.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btReturn.Image = ((System.Drawing.Image)(resources.GetObject("btReturn.Image")));
             this.btReturn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btReturn.Location = new System.Drawing.Point(154, 291);
+            this.btReturn.Location = new System.Drawing.Point(154, 270);
             this.btReturn.Name = "btReturn";
             this.btReturn.Size = new System.Drawing.Size(107, 55);
             this.btReturn.TabIndex = 19;
@@ -223,7 +223,6 @@
             // 
             // cbStatus
             // 
-            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Items.AddRange(new object[] {
             "Pending",

@@ -9,7 +9,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ProjectManagementPizza
@@ -90,7 +89,33 @@ namespace ProjectManagementPizza
 
         }
 
-        
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            if (checking() == true)
+            {
+                db.staffs.InsertOnSubmit(new staff
+                {
+                    staff_id = Convert.ToInt32(txtSID.Text),
+
+                    staff_name = txtSName.Text,
+
+                    phone_number = txtPhone.Text,
+
+                    email = txtEmail.Text,
+
+                    street = txtStreet.Text,
+
+                    salary = Convert.ToDecimal(txtSalary.Text),
+                    commune_id = cbCommune.Text,
+                });
+                db.SubmitChanges();
+                MyCommune();
+                MyStaff();
+                resetall();
+                MessageBox.Show("Nhap du lieu thanh cong! ");
+            }
+            else { }
+        }
 
         private void btCancel_Click_1(object sender, EventArgs e)
         {
@@ -139,7 +164,7 @@ namespace ProjectManagementPizza
                 s.street = txtStreet.Text;
 
                 s.salary = Convert.ToDecimal(txtSalary.Text);
-
+                s.commune_id = txtCID.Text;
                 db.SubmitChanges();
                 MessageBox.Show("Nhap thanh cong!");
             }
@@ -169,18 +194,13 @@ namespace ProjectManagementPizza
             txtPhone.Text = dataGridView1.Rows[r].Cells[2].Value.ToString();
             txtEmail.Text = dataGridView1.Rows[r].Cells[3].Value.ToString();
             txtStreet.Text = dataGridView1.Rows[r].Cells[4].Value.ToString();
-            
+            txtCID.Text = dataGridView1.Rows[r].Cells[5].Value.ToString();
             txtSalary.Text = dataGridView1.Rows[r].Cells[6].Value.ToString();
         }
 
-        private string selectedCommune = "";
         private void cbCommune_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbCommune.Text != selectedCommune)
-            {
-                selectedCommune = cbCommune.Text;
-                MyStaff();
-            }
+            MyStaff();
         }
 
         private void btAdd_Click_1(object sender, EventArgs e)
@@ -200,11 +220,8 @@ namespace ProjectManagementPizza
                     street = txtStreet.Text,
 
                     salary = Convert.ToDecimal(txtSalary.Text),
-
                     commune_id = cbCommune.Text,
-                    
-            });
-                cbCommune.Items.Clear();
+                });
                 db.SubmitChanges();
                 MyCommune();
                 MyStaff();
@@ -308,7 +325,5 @@ namespace ProjectManagementPizza
         {
 
         }
-
-        
     }
 }

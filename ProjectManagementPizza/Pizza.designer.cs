@@ -2534,10 +2534,6 @@ namespace ProjectManagementPizza
 		
 		private string _description;
 		
-		private System.Data.Linq.Binary _image;
-		
-		private bool _status;
-		
 		private EntitySet<order_detail> _order_details;
 		
     #region Extensibility Method Definitions
@@ -2552,10 +2548,6 @@ namespace ProjectManagementPizza
     partial void Onunit_priceChanged();
     partial void OndescriptionChanging(string value);
     partial void OndescriptionChanged();
-    partial void OnimageChanging(System.Data.Linq.Binary value);
-    partial void OnimageChanged();
-    partial void OnstatusChanging(bool value);
-    partial void OnstatusChanged();
     #endregion
 		
 		public product()
@@ -2640,46 +2632,6 @@ namespace ProjectManagementPizza
 					this._description = value;
 					this.SendPropertyChanged("description");
 					this.OndescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_image", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary image
-		{
-			get
-			{
-				return this._image;
-			}
-			set
-			{
-				if ((this._image != value))
-				{
-					this.OnimageChanging(value);
-					this.SendPropertyChanging();
-					this._image = value;
-					this.SendPropertyChanged("image");
-					this.OnimageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Bit NOT NULL")]
-		public bool status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
 				}
 			}
 		}

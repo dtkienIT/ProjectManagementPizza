@@ -50,7 +50,7 @@ namespace ProjectManagementPizza
             this.panel1.Controls.Add(this.txtAccount);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(746, 433);
+            this.panel1.Location = new System.Drawing.Point(601, 389);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(485, 335);
             this.panel1.TabIndex = 4;
