@@ -128,12 +128,12 @@ namespace ProjectManagementPizza
                 LoadData();
                 // Thông báo
                 MessageBox.Show("Đã thêm dữ liệu thành công!");
-                conn.Close();
             }
             catch (SqlException)
             {
                 MessageBox.Show(cmd.CommandText);
             }
+            conn.Close();
         }
 
         private void cbPID_SelectedIndexChanged(object sender, EventArgs e)
