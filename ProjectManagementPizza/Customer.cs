@@ -269,6 +269,16 @@ namespace ProjectManagementPizza
                 dtGridView.DataSource = query;
             
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
         

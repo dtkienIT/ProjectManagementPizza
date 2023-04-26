@@ -64,5 +64,11 @@ namespace ProjectManagementPizza
             z.ShowDialog();
             this.Close();
         }
+
+        private void createProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form ap = new Product();
+            ap.ShowDialog();
+        }
     }
 }
