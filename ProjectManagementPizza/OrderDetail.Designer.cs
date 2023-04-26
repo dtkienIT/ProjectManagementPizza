@@ -197,7 +197,7 @@ namespace ProjectManagementPizza
             this.dtGridView.Location = new System.Drawing.Point(7, 349);
             this.dtGridView.Name = "dtGridView";
             this.dtGridView.RowHeadersWidth = 51;
-            this.dtGridView.Size = new System.Drawing.Size(825, 150);
+            this.dtGridView.Size = new System.Drawing.Size(871, 150);
             this.dtGridView.TabIndex = 22;
             // 
             // btnAdd
@@ -226,6 +226,7 @@ namespace ProjectManagementPizza
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // btnDelete
             // 

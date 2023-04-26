@@ -172,5 +172,34 @@ namespace ProjectManagementPizza
         {
 
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand();
+            try
+            {
+                cmd.Connection = conn;
+                cmd.CommandType = CommandType.Text;
+                // Thứ tự dòng hiện hành
+                int r = dtGridView.CurrentCell.RowIndex;// MaKH hiện hành
+                string strStoreID =
+                dtGridView.Rows[r].Cells[0].Value.ToString();
+                // Câu lệnh SQL
+                cmd.CommandText = "UPDATE order_detail SET " + "order_detail_id='" +
+                txtQD.Text + "', order_id ='" + cbOID.Text + "' , product_id ='" + cbPID.Text + "', quantity ='" + txtQ.Text + "', unit_price ='" + txtP.Text + "' WHERE province_id = '" + strStoreID + "'";
+                // Cập nhật
+                cmd.ExecuteNonQuery();
+                // Load lại dữ liệu trên DataGridView
+                LoadData();
+                // Thông báo
+                MessageBox.Show("Đã sửa xong!");
+                conn.Close();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show(cmd.CommandText);// "Không sửa được. Lỗi rồi!");
+            }
+        }
     }
 }
