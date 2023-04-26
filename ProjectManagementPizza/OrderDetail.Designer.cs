@@ -32,6 +32,8 @@ namespace ProjectManagementPizza
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderDetail));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtPN = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtQ = new System.Windows.Forms.TextBox();
             this.txtP = new System.Windows.Forms.TextBox();
             this.cbPID = new System.Windows.Forms.ComboBox();
@@ -47,8 +49,6 @@ namespace ProjectManagementPizza
             this.button4 = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtPN = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,24 @@ namespace ProjectManagementPizza
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(866, 151);
             this.panel1.TabIndex = 3;
+            // 
+            // txtPN
+            // 
+            this.txtPN.Location = new System.Drawing.Point(207, 122);
+            this.txtPN.Name = "txtPN";
+            this.txtPN.ReadOnly = true;
+            this.txtPN.Size = new System.Drawing.Size(204, 22);
+            this.txtPN.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(52, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(125, 20);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Product_Name:";
             // 
             // txtQ
             // 
@@ -182,6 +200,7 @@ namespace ProjectManagementPizza
             this.dtGridView.RowTemplate.Height = 24;
             this.dtGridView.Size = new System.Drawing.Size(838, 149);
             this.dtGridView.TabIndex = 4;
+            this.dtGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_CellContentClick);
             // 
             // btnAdd
             // 
@@ -209,6 +228,7 @@ namespace ProjectManagementPizza
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnDelete
             // 
@@ -222,6 +242,7 @@ namespace ProjectManagementPizza
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button5
             // 
@@ -236,24 +257,6 @@ namespace ProjectManagementPizza
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(52, 122);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 20);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Product_Name:";
-            // 
-            // txtPN
-            // 
-            this.txtPN.Location = new System.Drawing.Point(207, 122);
-            this.txtPN.Name = "txtPN";
-            this.txtPN.ReadOnly = true;
-            this.txtPN.Size = new System.Drawing.Size(204, 22);
-            this.txtPN.TabIndex = 12;
-            // 
             // OrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -266,7 +269,10 @@ namespace ProjectManagementPizza
             this.Controls.Add(this.dtGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "OrderDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.OrderDetail_Load);
             this.panel1.ResumeLayout(false);

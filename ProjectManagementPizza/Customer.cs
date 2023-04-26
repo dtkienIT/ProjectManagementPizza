@@ -279,6 +279,11 @@ namespace ProjectManagementPizza
         {
 
         }
+
+        private void lblQuantity_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
         

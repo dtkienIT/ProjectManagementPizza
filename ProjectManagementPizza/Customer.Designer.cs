@@ -140,11 +140,12 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.Location = new System.Drawing.Point(203, 258);
+            this.lblQuantity.Location = new System.Drawing.Point(174, 268);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(27, 29);
             this.lblQuantity.TabIndex = 26;
             this.lblQuantity.Text = "0";
+            this.lblQuantity.Click += new System.EventHandler(this.lblQuantity_Click);
             // 
             // label12
             // 
@@ -394,12 +395,14 @@
             // 
             // Customer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1070, 553);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtGridView);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Customer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer";
