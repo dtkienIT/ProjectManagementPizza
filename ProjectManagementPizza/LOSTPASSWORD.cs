@@ -85,6 +85,7 @@ namespace ProjectManagementPizza
 
         private void btXacNhan_Click(object sender, EventArgs e)
         {
+            string cachecode = Convert.ToString(_r);
             LoadData();
             LogIn r = new LogIn();
             if (conn.State == ConnectionState.Open)
@@ -93,7 +94,7 @@ namespace ProjectManagementPizza
             }
             conn.Open();
             SetbtOn();
-            if (txtcheck.Text == txtMK.Text)
+            if (txtcheck.Text == txtMK.Text && txtCapcha.Text == cachecode)
             {
                 try
                 { // Thực hiện lệnh
