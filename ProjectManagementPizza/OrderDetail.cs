@@ -201,5 +201,60 @@ namespace ProjectManagementPizza
                 MessageBox.Show(cmd.CommandText);// "Không sửa được. Lỗi rồi!");
             }
         }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            // Kiểm tra User có muốn xóa hàng dữ liệu
+            DialogResult CheckYN;
+            CheckYN = MessageBox.Show("Có chắc xóa không?", "Trảlời", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (CheckYN == DialogResult.Yes)
+            {
+                // Mở kết nối
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+                conn.Open();
+                try
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandType = CommandType.Text;
+                    // Lấy Row hiện tại
+                    int r = dtGridView.CurrentCell.RowIndex;
+                    // Store_ID của record hiện hành
+                    string StoreID = dtGridView.Rows[r].Cells[0].Value.ToString();
+                    // Lệnh truy vấn SQL
+                    cmd.CommandText = "DELETE FROM order_detail WHERE order_detail_id='" + StoreID +
+                    "'";
+                    cmd.CommandType = CommandType.Text;
+                    // Thực hiện lệnh truy vấn
+                    cmd.ExecuteNonQuery();
+                    // Cập nhật lại dữ liệu trên DataGridView
+                    LoadData();
+                    // Thông báo
+                    MessageBox.Show("Đã xóa thành công Order_Detail_ID =" + StoreID + ".");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không xóa được Order_Detail hiện hành.");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        private void dtGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int r = dtGridView.CurrentCell.RowIndex;
+            string chuoi = "";
+            // Chuyển thông tin từ Gridview lên các textbox ở panel
+            txtQD.Text = dtGridView.Rows[r].Cells[0].Value.ToString();
+            cbOID.Text = dtGridView.Rows[r].Cells[1].Value.ToString();
+            cbPID.Text = dtGridView.Rows[r].Cells[2].Value.ToString();
+            chuoi = dtGridView.Rows[r].Cells[3].Value.ToString();
+            txtQ.Text = chuoi.Replace(".00", "");
+            txtP.Text = dtGridView.Rows[r].Cells[4].Value.ToString();
+        }
     }
 }
