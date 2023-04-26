@@ -184,7 +184,7 @@ namespace ProjectManagementPizza
                 dtGridView.Rows[r].Cells[0].Value.ToString();
                 // Câu lệnh SQL
                 cmd.CommandText = "UPDATE order_detail SET " + "order_detail_id='" +
-                txtQD.Text + "', order_id ='" + cbOID.Text + "' , product_id ='" + cbPID.Text + "', quantity ='" + txtQ.Text + "', unit_price ='" + txtP.Text + "' WHERE province_id = '" + strStoreID + "'";
+                txtQD.Text + "', order_id ='" + cbOID.Text + "' , product_id ='" + cbPID.Text + "', quantity ='" + txtQ.Text + "', unit_price ='" + txtP.Text + "' WHERE order_detail_id = '" + strStoreID + "'";
                 // Cập nhật
                 cmd.ExecuteNonQuery();
                 // Load lại dữ liệu trên DataGridView
@@ -196,6 +196,7 @@ namespace ProjectManagementPizza
             catch (SqlException)
             {
                 MessageBox.Show(cmd.CommandText);// "Không sửa được. Lỗi rồi!");
+            
             }
         }
 
@@ -249,9 +250,9 @@ namespace ProjectManagementPizza
             txtQD.Text = dtGridView.Rows[r].Cells[0].Value.ToString();
             cbOID.Text = dtGridView.Rows[r].Cells[1].Value.ToString();
             cbPID.Text = dtGridView.Rows[r].Cells[2].Value.ToString();
-            chuoi = dtGridView.Rows[r].Cells[3].Value.ToString();
-            txtQ.Text = chuoi.Replace(".00", "");
-            txtP.Text = dtGridView.Rows[r].Cells[4].Value.ToString();
+            chuoi = dtGridView.Rows[r].Cells[4].Value.ToString();
+            txtP.Text = chuoi.Replace(".00", "");
+            txtQ.Text = dtGridView.Rows[r].Cells[3].Value.ToString();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -261,6 +262,11 @@ namespace ProjectManagementPizza
             txtQ.Text = "";
             txtP.Text = "";
             LoadData();
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape) { this.Close(); return false; }
+            else return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
