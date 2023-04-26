@@ -89,37 +89,46 @@ namespace ProjectManagementPizza
             }
             conn.Open();
             SetbtOn();
-            try
-            { // Thực hiện lệnh
+            if (txtcheck.Text == txtMK.Text)
+            {
+                try
+                { // Thực hiện lệnh
 
 
 
-                string z = "UPDATE login SET password=@mk WHERE username= @tk";
-                SqlCommand cmd = new SqlCommand(z);
-                cmd.Connection = conn;
-                // Tham số @tk và @mk
-                cmd.Parameters.AddWithValue("@tk", txtID.Text);
-                cmd.Parameters.AddWithValue("@mk", txtMK.Text);
+                    string z = "UPDATE login SET password=@mk WHERE username= @tk";
+                    SqlCommand cmd = new SqlCommand(z);
+                    cmd.Connection = conn;
+                    // Tham số @tk và @mk
+                    cmd.Parameters.AddWithValue("@tk", txtID.Text);
+                    cmd.Parameters.AddWithValue("@mk", txtMK.Text);
 
-                cmd.ExecuteNonQuery();
-                // Thông báo
-                int check = Int32.Parse(cmd.ExecuteNonQuery().ToString());
-                if (check > 0)
-                {
-                    MessageBox.Show("Đổi Tài Khoản thành công!");
-                    this.Hide();
-                    r.ShowDialog();
-                    this.Close();
+                    cmd.ExecuteNonQuery();
+                    // Thông báo
+                    int check = Int32.Parse(cmd.ExecuteNonQuery().ToString());
+                    if (check > 0)
+                    {
+                        MessageBox.Show("Đổi Tài Khoản thành công!");
+                        this.Hide();
+                        r.ShowDialog();
+                        this.Close();
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tai khoan khong ton tai!");
+                    }
                 }
-                else
+                catch (SqlException)
                 {
-                    MessageBox.Show("Tai khoan khong ton tai!");
+                    MessageBox.Show("KHONG TON TAI!!!"); txtID.Focus();
                 }
             }
-            catch (SqlException)
+            else
             {
-                MessageBox.Show("KHONG TON TAI!!!"); txtID.Focus();
+                MessageBox.Show("Xác nhận mật khẩu không khớp, mời nhập lại!");
+                txtcheck.ResetText();
+                txtcheck.Focus();
             }
             conn.Close();
         }
