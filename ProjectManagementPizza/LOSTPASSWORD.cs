@@ -94,39 +94,46 @@ namespace ProjectManagementPizza
             }
             conn.Open();
             SetbtOn();
-            if (txtcheck.Text == txtMK.Text && txtCapcha.Text == cachecode)
+            if (txtcheck.Text == txtMK.Text)
             {
-                try
-                { // Thực hiện lệnh
+                if (txtCapcha.Text == cachecode)
+                    try
+                    { // Thực hiện lệnh
 
 
 
-                    string z = "UPDATE login SET password=@mk WHERE username= @tk";
-                    SqlCommand cmd = new SqlCommand(z);
-                    cmd.Connection = conn;
-                    // Tham số @tk và @mk
-                    cmd.Parameters.AddWithValue("@tk", txtID.Text);
-                    cmd.Parameters.AddWithValue("@mk", txtMK.Text);
+                        string z = "UPDATE login SET password=@mk WHERE username= @tk";
+                        SqlCommand cmd = new SqlCommand(z);
+                        cmd.Connection = conn;
+                        // Tham số @tk và @mk
+                        cmd.Parameters.AddWithValue("@tk", txtID.Text);
+                        cmd.Parameters.AddWithValue("@mk", txtMK.Text);
 
-                    cmd.ExecuteNonQuery();
-                    // Thông báo
-                    int check = Int32.Parse(cmd.ExecuteNonQuery().ToString());
-                    if (check > 0)
-                    {
-                        MessageBox.Show("Đổi Tài Khoản thành công!");
-                        this.Hide();
-                        r.ShowDialog();
-                        this.Close();
+                        cmd.ExecuteNonQuery();
+                        // Thông báo
+                        int check = Int32.Parse(cmd.ExecuteNonQuery().ToString());
+                        if (check > 0)
+                        {
+                            MessageBox.Show("Đổi Tài Khoản thành công!");
+                            this.Hide();
+                            r.ShowDialog();
+                            this.Close();
 
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tai khoan khong ton tai!");
+                        }
                     }
-                    else
+                    catch (SqlException)
                     {
-                        MessageBox.Show("Tai khoan khong ton tai!");
+                        MessageBox.Show("KHONG TON TAI!!!"); txtID.Focus();
                     }
-                }
-                catch (SqlException)
+                else 
                 {
-                    MessageBox.Show("KHONG TON TAI!!!"); txtID.Focus();
+                    MessageBox.Show("Sai mã cache rồi!");
+                    txtCapcha.ResetText();
+                    txtCapcha.Focus();
                 }
             }
             else
@@ -158,7 +165,6 @@ namespace ProjectManagementPizza
             {
                 conn.Close();
             }
-
 
             conn.Open();
             try
@@ -209,6 +215,12 @@ namespace ProjectManagementPizza
                 MessageBox.Show("Khong the ket noi voi du lieu SQL");
             }
             conn.Close();
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape) { this.Close(); return false; }
+            else if (keyData == Keys.Enter) { btXacNhan.PerformClick(); return false; }
+            else return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
