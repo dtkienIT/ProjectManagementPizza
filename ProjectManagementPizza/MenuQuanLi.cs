@@ -70,5 +70,11 @@ namespace ProjectManagementPizza
             Form ap = new Product();
             ap.ShowDialog();
         }
+
+        private void cretateOrderDetailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form ap = new OrderDetail();
+            ap.ShowDialog();
+        }
     }
 }
