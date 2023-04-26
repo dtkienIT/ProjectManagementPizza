@@ -168,10 +168,7 @@ namespace ProjectManagementPizza
 
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void button4_Click_1(object sender, EventArgs e)
         {
@@ -255,6 +252,15 @@ namespace ProjectManagementPizza
             chuoi = dtGridView.Rows[r].Cells[3].Value.ToString();
             txtQ.Text = chuoi.Replace(".00", "");
             txtP.Text = dtGridView.Rows[r].Cells[4].Value.ToString();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            txtQD.Text = "";
+            txtQD.Focus();
+            txtQ.Text = "";
+            txtP.Text = "";
+            LoadData();
         }
     }
 }
