@@ -193,14 +193,12 @@ namespace ProjectManagementPizza
             // 
             // dtGridView
             // 
-            this.dtGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridView.Location = new System.Drawing.Point(22, 339);
+            this.dtGridView.ColumnHeadersHeight = 29;
+            this.dtGridView.Location = new System.Drawing.Point(7, 349);
             this.dtGridView.Name = "dtGridView";
             this.dtGridView.RowHeadersWidth = 51;
-            this.dtGridView.RowTemplate.Height = 24;
-            this.dtGridView.Size = new System.Drawing.Size(838, 149);
-            this.dtGridView.TabIndex = 4;
-            this.dtGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_CellContentClick);
+            this.dtGridView.Size = new System.Drawing.Size(825, 150);
+            this.dtGridView.TabIndex = 22;
             // 
             // btnAdd
             // 
@@ -220,38 +218,36 @@ namespace ProjectManagementPizza
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(258, 223);
+            this.button4.Location = new System.Drawing.Point(256, 223);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 67);
-            this.button4.TabIndex = 23;
+            this.button4.Size = new System.Drawing.Size(114, 67);
+            this.button4.TabIndex = 24;
             this.button4.Text = "Edit";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(435, 223);
+            this.btnDelete.Location = new System.Drawing.Point(427, 223);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(108, 67);
-            this.btnDelete.TabIndex = 24;
+            this.btnDelete.Size = new System.Drawing.Size(114, 67);
+            this.btnDelete.TabIndex = 25;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // button5
             // 
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(609, 223);
+            this.button5.Location = new System.Drawing.Point(592, 223);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(114, 67);
-            this.button5.TabIndex = 25;
+            this.button5.TabIndex = 26;
             this.button5.Text = "Reload";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -298,10 +294,10 @@ namespace ProjectManagementPizza
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtPN;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox txtPN;
-        private System.Windows.Forms.Label label7;
     }
 }

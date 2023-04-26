@@ -162,5 +162,15 @@ namespace ProjectManagementPizza
 
             conn.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
