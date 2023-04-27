@@ -222,5 +222,10 @@ namespace ProjectManagementPizza
             else if (keyData == Keys.Enter) { btXacNhan.PerformClick(); return false; }
             else return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        private void LOSTPASSWORD_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

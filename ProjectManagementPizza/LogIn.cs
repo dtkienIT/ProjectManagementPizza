@@ -62,7 +62,16 @@ namespace ProjectManagementPizza
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            LOSTPASSWORD z = new LOSTPASSWORD();
+            z.ShowDialog();
+            this.Hide();
+        }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            LOSTPASSWORD z = new LOSTPASSWORD();
+            z.ShowDialog();
+            this.Hide();
         }
     }
 }

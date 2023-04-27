@@ -172,6 +172,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "LOSTPASSWORD";
             this.Text = "LOSTPASSWORD";
+            this.Load += new System.EventHandler(this.LOSTPASSWORD_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
