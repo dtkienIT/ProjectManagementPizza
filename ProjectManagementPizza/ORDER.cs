@@ -24,9 +24,11 @@ namespace ProjectManagementPizza
             var Staf = from s in db.staffs select s.staff_id;
             foreach (int a in Staf)
             {
+               
                 cbStaff.Items.Add(a);
             }
             cbStaff.SelectedIndex = 0;
+
         }
         private void MyCustomer()
         {
@@ -36,8 +38,10 @@ namespace ProjectManagementPizza
             foreach (int a in Cus)
             {
                 cbCustomer.Items.Add(a);
+               
             }
             cbCustomer.SelectedIndex = 0;
+            
         }
         private void MyOrder()
         {
@@ -123,11 +127,14 @@ namespace ProjectManagementPizza
 
                     status = cbStatus.Text,
                 });
+                cbStaff.Items.Clear();
+                cbCustomer.Items.Clear();
                 db.SubmitChanges();
                 MyOrder();
                 MyStaff();
                 MyCustomer();
                 resetall();
+                
                 MessageBox.Show("Nhập dữ liệu thành công!");
             }
             else { }
@@ -232,6 +239,8 @@ namespace ProjectManagementPizza
 
         private void button1_Click(object sender, EventArgs e)
         {
+            cbStaff.Items.Clear();
+            cbCustomer.Items.Clear();
             MyStaff();
             MyCustomer();
         }

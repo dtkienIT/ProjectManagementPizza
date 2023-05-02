@@ -109,6 +109,7 @@ namespace ProjectManagementPizza
                     commune_id = cbCommune.Text,
                 });
                 db.SubmitChanges();
+                cbCommune.Items.Clear();
                 MyCommune();
                 MyStaff();
                 resetall();
@@ -143,6 +144,7 @@ namespace ProjectManagementPizza
 
         private void button1_Click(object sender, EventArgs e)
         {
+            cbCommune.Items.Clear();
             MyCommune();MyStaff();
         }
 
