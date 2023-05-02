@@ -229,5 +229,11 @@ namespace ProjectManagementPizza
             z.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MyStaff();
+            MyCustomer();
+        }
     }
 }
