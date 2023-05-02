@@ -143,7 +143,7 @@ namespace ProjectManagementPizza
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MyCommune();MyStaff();
         }
 
         private void btSave_Click_1(object sender, EventArgs e)
