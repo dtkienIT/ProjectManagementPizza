@@ -83,5 +83,11 @@ namespace ProjectManagementPizza
             
             fReport.Show();
         }
+
+        private void createPizzaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form ap = new Piza();
+            ap.ShowDialog();
+        }
     }
 }
