@@ -146,6 +146,7 @@
             this.txtreturn.TabIndex = 12;
             this.txtreturn.Text = "Return to menu";
             this.txtreturn.UseVisualStyleBackColor = true;
+            this.txtreturn.Click += new System.EventHandler(this.txtreturn_Click);
             // 
             // txtDelete
             // 
@@ -189,8 +190,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(904, 598);
             this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
             this.Name = "Categories";
             this.Text = "Categories";
             this.panel2.ResumeLayout(false);

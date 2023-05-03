@@ -81,13 +81,21 @@ namespace ProjectManagementPizza
         {
             FProductReport fReport = new FProductReport();
             
-            fReport.Show();
+            fReport.ShowDialog();
         }
 
         private void createPizzaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form ap = new Piza();
             ap.ShowDialog();
+        }
+
+        private void createCategoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Categories z = new Categories();
+            z.ShowDialog();
+            this.Close();
         }
     }
 }
