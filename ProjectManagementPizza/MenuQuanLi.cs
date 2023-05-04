@@ -97,5 +97,18 @@ namespace ProjectManagementPizza
             z.ShowDialog();
             this.Close();
         }
+
+        private void dsProductToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FProductReport fReport = new FProductReport();
+
+            fReport.ShowDialog();
+        }
+
+        private void dsProductDetailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FOderDetailReport fReport = new FOderDetailReport();
+            fReport.ShowDialog();
+        }
     }
 }
