@@ -30,39 +30,26 @@ namespace ProjectManagementPizza
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.order_detailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsProduct = new ProjectManagementPizza.dsProduct();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.order_detailTableAdapter = new ProjectManagementPizza.dsProductTableAdapters.order_detailTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.cbProduct = new System.Windows.Forms.ComboBox();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsProduct1 = new ProjectManagementPizza.dsProduct();
             this.dsProduct1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.provinceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.provinceTableAdapter = new ProjectManagementPizza.dsProductTableAdapters.provinceTableAdapter();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productTableAdapter = new ProjectManagementPizza.dsProductTableAdapters.productTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.order_detailBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduct1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduct1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            reportDataSource5.Name = "DataSet1";
-            reportDataSource5.Value = this.order_detailBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource5);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProjectManagementPizza.orderDetailReport.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 79);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1270, 446);
-            this.reportViewer1.TabIndex = 0;
             // 
             // order_detailBindingSource
             // 
@@ -73,6 +60,19 @@ namespace ProjectManagementPizza
             // 
             this.dsProduct.DataSetName = "dsProduct";
             this.dsProduct.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.order_detailBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ProjectManagementPizza.orderDetailReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 85);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1365, 446);
+            this.reportViewer1.TabIndex = 0;
             // 
             // order_detailTableAdapter
             // 
@@ -102,6 +102,11 @@ namespace ProjectManagementPizza
             this.cbProduct.ValueMember = "product_id";
             this.cbProduct.SelectedIndexChanged += new System.EventHandler(this.cbProduct_SelectedIndexChanged);
             // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataMember = "product";
+            this.productBindingSource.DataSource = this.dsProduct1;
+            // 
             // dsProduct1
             // 
             this.dsProduct1.DataSetName = "dsProduct";
@@ -121,11 +126,6 @@ namespace ProjectManagementPizza
             // 
             this.provinceTableAdapter.ClearBeforeFill = true;
             // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataMember = "product";
-            this.productBindingSource.DataSource = this.dsProduct1;
-            // 
             // productTableAdapter
             // 
             this.productTableAdapter.ClearBeforeFill = true;
@@ -134,7 +134,7 @@ namespace ProjectManagementPizza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1270, 525);
+            this.ClientSize = new System.Drawing.Size(1365, 531);
             this.Controls.Add(this.cbProduct);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
@@ -143,10 +143,10 @@ namespace ProjectManagementPizza
             this.Load += new System.EventHandler(this.FOderDetailReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.order_detailBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduct1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsProduct1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.provinceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
