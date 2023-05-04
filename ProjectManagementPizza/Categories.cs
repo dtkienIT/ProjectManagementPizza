@@ -129,15 +129,15 @@ namespace ProjectManagementPizza
 
                     cmd.CommandType = CommandType.Text;
                     // Lấy Row hiện tại
-
+                    int r = dtGridView.CurrentCell.RowIndex;
 
                     // Store_ID của record hiện hành
-
+                    string StoreID = dtGridView.Rows[r].Cells[0].Value.ToString();
 
 
                     // Lệnh truy vấn SQL
 
-                    cmd.CommandText = "DELETE FROM category WHERE category_name='" + txtCName.Text +
+                    cmd.CommandText = "DELETE FROM category WHERE category_id='" + StoreID +
 
                     "'";
 
