@@ -152,6 +152,12 @@
     <Compile Include="Staff.Designer.cs">
       <DependentUpon>Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="WarehouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseForm.Designer.cs">
+      <DependentUpon>WarehouseForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Categories.resx">
       <DependentUpon>Categories.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +192,9 @@
     <EmbeddedResource Include="ProductReport.rdlc" />
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseForm.resx">
+      <DependentUpon>WarehouseForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dsProduct.xsc">
       <DependentUpon>dsProduct.xsd</DependentUpon>
