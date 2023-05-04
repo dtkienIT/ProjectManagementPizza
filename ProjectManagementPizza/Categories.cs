@@ -75,7 +75,7 @@ namespace ProjectManagementPizza
                     // Thông báo
                     LoadData();
                     MessageBox.Show("Đã Thêm Nhãn Hiệu thành công!!!");
-                    ResetText();
+                    Resettext();
                 }
                 catch (SqlException)
                 {
@@ -92,6 +92,7 @@ namespace ProjectManagementPizza
         private void btReload_Click(object sender, EventArgs e)
         {
             LoadData();
+            Resettext();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -202,6 +203,14 @@ namespace ProjectManagementPizza
                 }
             }
             else { MessageBox.Show("ID khong hop le! "); }
+        }
+
+        private void txtreturn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuQuanLi r = new MenuQuanLi();
+            r.ShowDialog();
+            this.Close();
         }
     }
 }
