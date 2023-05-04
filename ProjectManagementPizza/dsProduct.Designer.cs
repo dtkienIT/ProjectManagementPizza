@@ -8396,16 +8396,18 @@ SELECT order_detail_id, order_id, product_id, quantity, unit_price FROM order_de
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT order_detail_id, order_id, product_id, quantity, unit_price FROM dbo.order" +
-                "_detail";
+                "_detail\r\nWHERE product_id = @x";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@x", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "product_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsProduct.order_detailDataTable dataTable) {
+        public virtual int Fill(dsProduct.order_detailDataTable dataTable, int x) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(x));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -8417,8 +8419,9 @@ SELECT order_detail_id, order_id, product_id, quantity, unit_price FROM order_de
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsProduct.order_detailDataTable GetData() {
+        public virtual dsProduct.order_detailDataTable GetData(int x) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(x));
             dsProduct.order_detailDataTable dataTable = new dsProduct.order_detailDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -9546,7 +9549,7 @@ SELECT product_id, product_name, unit_price, description FROM product WHERE (pro
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT product_id, product_name, unit_price, description FROM dbo.product";
+            this._commandCollection[0].CommandText = "SELECT product_id, product_name, unit_price, description FROM dbo.product\r\n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
