@@ -32,27 +32,27 @@ namespace ProjectManagementPizza
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Piza));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.cbWID = new System.Windows.Forms.ComboBox();
+            this.cbCID = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPS = new System.Windows.Forms.TextBox();
+            this.txtPM = new System.Windows.Forms.TextBox();
+            this.txtPL = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtD = new System.Windows.Forms.TextBox();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.txtPN = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.txtPID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.dtGridView = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPL = new System.Windows.Forms.TextBox();
-            this.txtPM = new System.Windows.Forms.TextBox();
-            this.txtPS = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbCID = new System.Windows.Forms.ComboBox();
-            this.cbWID = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView)).BeginInit();
             this.SuspendLayout();
@@ -95,19 +95,95 @@ namespace ProjectManagementPizza
             this.panel1.Size = new System.Drawing.Size(1136, 198);
             this.panel1.TabIndex = 13;
             // 
-            // button5
+            // cbWID
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(719, 272);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(114, 67);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "Reload";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.cbWID.FormattingEnabled = true;
+            this.cbWID.Location = new System.Drawing.Point(722, 120);
+            this.cbWID.Name = "cbWID";
+            this.cbWID.Size = new System.Drawing.Size(213, 24);
+            this.cbWID.TabIndex = 23;
+            // 
+            // cbCID
+            // 
+            this.cbCID.FormattingEnabled = true;
+            this.cbCID.Location = new System.Drawing.Point(162, 120);
+            this.cbCID.Name = "cbCID";
+            this.cbCID.Size = new System.Drawing.Size(213, 24);
+            this.cbCID.TabIndex = 22;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(21, 124);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(103, 20);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Category ID:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(565, 124);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(121, 20);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Warehouse ID:";
+            // 
+            // txtPS
+            // 
+            this.txtPS.Location = new System.Drawing.Point(722, 10);
+            this.txtPS.Name = "txtPS";
+            this.txtPS.Size = new System.Drawing.Size(213, 22);
+            this.txtPS.TabIndex = 19;
+            // 
+            // txtPM
+            // 
+            this.txtPM.Location = new System.Drawing.Point(722, 45);
+            this.txtPM.Name = "txtPM";
+            this.txtPM.Size = new System.Drawing.Size(213, 22);
+            this.txtPM.TabIndex = 18;
+            // 
+            // txtPL
+            // 
+            this.txtPL.Location = new System.Drawing.Point(722, 84);
+            this.txtPL.Name = "txtPL";
+            this.txtPL.Size = new System.Drawing.Size(213, 22);
+            this.txtPL.TabIndex = 17;
+            this.txtPL.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(565, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 20);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Price Small:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(565, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 20);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Price Medium:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(565, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 20);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Price Large:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtD
             // 
@@ -116,40 +192,12 @@ namespace ProjectManagementPizza
             this.txtD.Size = new System.Drawing.Size(213, 22);
             this.txtD.TabIndex = 13;
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(520, 272);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(114, 67);
-            this.btnDelete.TabIndex = 24;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // txtPN
             // 
             this.txtPN.Location = new System.Drawing.Point(162, 47);
             this.txtPN.Name = "txtPN";
             this.txtPN.Size = new System.Drawing.Size(213, 22);
             this.txtPN.TabIndex = 12;
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(318, 272);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 67);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Edit";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label7
             // 
@@ -160,20 +208,6 @@ namespace ProjectManagementPizza
             this.label7.Size = new System.Drawing.Size(78, 20);
             this.label7.TabIndex = 6;
             this.label7.Text = "Pizza ID:";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(104, 272);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(114, 67);
-            this.btnAdd.TabIndex = 21;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtPID
             // 
@@ -202,6 +236,62 @@ namespace ProjectManagementPizza
             this.label3.TabIndex = 8;
             this.label3.Text = "Description:";
             // 
+            // button5
+            // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(719, 272);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(114, 67);
+            this.button5.TabIndex = 25;
+            this.button5.Text = "Reload";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(520, 272);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(114, 67);
+            this.btnDelete.TabIndex = 24;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(318, 272);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(114, 67);
+            this.button4.TabIndex = 23;
+            this.button4.Text = "Edit";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(104, 272);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(114, 67);
+            this.btnAdd.TabIndex = 21;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // dtGridView
             // 
             this.dtGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -215,100 +305,11 @@ namespace ProjectManagementPizza
             this.dtGridView.TabIndex = 14;
             this.dtGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_CellContentClick);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(565, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 20);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Price Large:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(565, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 20);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "Price Medium:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(565, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 20);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Price Small:";
-            // 
-            // txtPL
-            // 
-            this.txtPL.Location = new System.Drawing.Point(722, 84);
-            this.txtPL.Name = "txtPL";
-            this.txtPL.Size = new System.Drawing.Size(213, 22);
-            this.txtPL.TabIndex = 17;
-            this.txtPL.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // txtPM
-            // 
-            this.txtPM.Location = new System.Drawing.Point(722, 45);
-            this.txtPM.Name = "txtPM";
-            this.txtPM.Size = new System.Drawing.Size(213, 22);
-            this.txtPM.TabIndex = 18;
-            // 
-            // txtPS
-            // 
-            this.txtPS.Location = new System.Drawing.Point(722, 10);
-            this.txtPS.Name = "txtPS";
-            this.txtPS.Size = new System.Drawing.Size(213, 22);
-            this.txtPS.TabIndex = 19;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(565, 124);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(121, 20);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Warehouse ID:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 124);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(103, 20);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Category ID:";
-            // 
-            // cbCID
-            // 
-            this.cbCID.FormattingEnabled = true;
-            this.cbCID.Location = new System.Drawing.Point(162, 120);
-            this.cbCID.Name = "cbCID";
-            this.cbCID.Size = new System.Drawing.Size(213, 24);
-            this.cbCID.TabIndex = 22;
-            // 
-            // cbWID
-            // 
-            this.cbWID.FormattingEnabled = true;
-            this.cbWID.Location = new System.Drawing.Point(722, 120);
-            this.cbWID.Name = "cbWID";
-            this.cbWID.Size = new System.Drawing.Size(213, 24);
-            this.cbWID.TabIndex = 23;
-            // 
             // Piza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1136, 565);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.dtGridView);
@@ -317,6 +318,7 @@ namespace ProjectManagementPizza
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdd);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Piza";
