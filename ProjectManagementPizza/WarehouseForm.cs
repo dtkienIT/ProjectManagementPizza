@@ -130,6 +130,7 @@ namespace ProjectManagementPizza
                 // Thông báo
                 LoadData();
                 MessageBox.Show("Đã Thêm Nhãn Hiệu thành công!!!");
+                ResetTextAll();
             }
             catch (SqlException)
             {
@@ -244,7 +245,7 @@ namespace ProjectManagementPizza
                 }
                 catch (SqlException ex)
                 {
-                    MessageBox.Show("Không xóa được Store hiện hành.");
+                    MessageBox.Show("Không xóa được warehouse hiện hành.");
 
                     MessageBox.Show("Lỗi SQL: " + ex.Number + ". " + ex.Message);
                 }

@@ -60,7 +60,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtCName);
-            this.panel2.Location = new System.Drawing.Point(32, 38);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(818, 548);
             this.panel2.TabIndex = 22;
@@ -192,7 +192,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(904, 598);
+            this.ClientSize = new System.Drawing.Size(841, 571);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
