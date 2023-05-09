@@ -38,11 +38,12 @@
             this.cretateOrderDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createPizzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.returnToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSachReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dsProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dsProductDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createWareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +70,8 @@
             this.createProductToolStripMenuItem,
             this.cretateOrderDetailToolStripMenuItem,
             this.createPizzaToolStripMenuItem,
-            this.createCategoriesToolStripMenuItem});
+            this.createCategoriesToolStripMenuItem,
+            this.createWareHouseToolStripMenuItem});
             this.createDataToolStripMenuItem.Name = "createDataToolStripMenuItem";
             this.createDataToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.createDataToolStripMenuItem.Text = "Create Data";
@@ -123,6 +125,29 @@
             this.createCategoriesToolStripMenuItem.Text = "Create Categories";
             this.createCategoriesToolStripMenuItem.Click += new System.EventHandler(this.createCategoriesToolStripMenuItem_Click);
             // 
+            // danhSachReportToolStripMenuItem
+            // 
+            this.danhSachReportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dsProductToolStripMenuItem,
+            this.dsProductDetailToolStripMenuItem});
+            this.danhSachReportToolStripMenuItem.Name = "danhSachReportToolStripMenuItem";
+            this.danhSachReportToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
+            this.danhSachReportToolStripMenuItem.Text = "Danh sach report";
+            // 
+            // dsProductToolStripMenuItem
+            // 
+            this.dsProductToolStripMenuItem.Name = "dsProductToolStripMenuItem";
+            this.dsProductToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.dsProductToolStripMenuItem.Text = "dsProduct";
+            this.dsProductToolStripMenuItem.Click += new System.EventHandler(this.dsProductToolStripMenuItem_Click_1);
+            // 
+            // dsProductDetailToolStripMenuItem
+            // 
+            this.dsProductDetailToolStripMenuItem.Name = "dsProductDetailToolStripMenuItem";
+            this.dsProductDetailToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.dsProductDetailToolStripMenuItem.Text = "dsOrderDetail";
+            this.dsProductDetailToolStripMenuItem.Click += new System.EventHandler(this.dsProductDetailToolStripMenuItem_Click);
+            // 
             // returnToLoginToolStripMenuItem
             // 
             this.returnToLoginToolStripMenuItem.Name = "returnToLoginToolStripMenuItem";
@@ -137,28 +162,12 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // danhSachReportToolStripMenuItem
+            // createWareHouseToolStripMenuItem
             // 
-            this.danhSachReportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dsProductToolStripMenuItem,
-            this.dsProductDetailToolStripMenuItem});
-            this.danhSachReportToolStripMenuItem.Name = "danhSachReportToolStripMenuItem";
-            this.danhSachReportToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
-            this.danhSachReportToolStripMenuItem.Text = "Danh sach report";
-            // 
-            // dsProductToolStripMenuItem
-            // 
-            this.dsProductToolStripMenuItem.Name = "dsProductToolStripMenuItem";
-            this.dsProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.dsProductToolStripMenuItem.Text = "dsProduct";
-            this.dsProductToolStripMenuItem.Click += new System.EventHandler(this.dsProductToolStripMenuItem_Click_1);
-            // 
-            // dsProductDetailToolStripMenuItem
-            // 
-            this.dsProductDetailToolStripMenuItem.Name = "dsProductDetailToolStripMenuItem";
-            this.dsProductDetailToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.dsProductDetailToolStripMenuItem.Text = "dsOrderDetail";
-            this.dsProductDetailToolStripMenuItem.Click += new System.EventHandler(this.dsProductDetailToolStripMenuItem_Click);
+            this.createWareHouseToolStripMenuItem.Name = "createWareHouseToolStripMenuItem";
+            this.createWareHouseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.createWareHouseToolStripMenuItem.Text = "Create WareHouse";
+            this.createWareHouseToolStripMenuItem.Click += new System.EventHandler(this.createWareHouseToolStripMenuItem_Click);
             // 
             // MenuQuanLi
             // 
@@ -198,5 +207,6 @@
         private System.Windows.Forms.ToolStripMenuItem danhSachReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dsProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dsProductDetailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createWareHouseToolStripMenuItem;
     }
 }

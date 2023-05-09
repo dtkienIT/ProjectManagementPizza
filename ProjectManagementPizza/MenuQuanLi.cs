@@ -110,5 +110,13 @@ namespace ProjectManagementPizza
             FOderDetailReport fReport = new FOderDetailReport();
             fReport.ShowDialog();
         }
+
+        private void createWareHouseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WarehouseForm z  = new WarehouseForm(); 
+            z.ShowDialog();
+            this.Close();
+        }
     }
 }
