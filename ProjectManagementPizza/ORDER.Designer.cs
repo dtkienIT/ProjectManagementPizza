@@ -61,7 +61,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.btAdd);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btEdit);
