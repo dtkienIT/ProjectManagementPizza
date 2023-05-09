@@ -46,6 +46,12 @@ namespace ProjectManagementPizza
                 MessageBox.Show("Không lấy được dữ liệu", "Lỗi dữ liệu!");
             }
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape) { this.Close(); return false; }
+            else if (keyData == Keys.Enter) { btAdd.PerformClick(); return false; }
+            else return base.ProcessCmdKey(ref msg, keyData);
+        }
         void LoadDataComm()
         {
             try
