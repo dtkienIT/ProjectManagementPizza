@@ -37,10 +37,6 @@
             this.btDelete = new System.Windows.Forms.Button();
             this.btCancel = new System.Windows.Forms.Button();
             this.btReturn = new System.Windows.Forms.Button();
-            this.txtSID = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtCusID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.dtOrderDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.cbStatus = new System.Windows.Forms.ComboBox();
@@ -171,40 +167,6 @@
             this.btReturn.UseVisualStyleBackColor = true;
             this.btReturn.Click += new System.EventHandler(this.btReturn_Click);
             // 
-            // txtSID
-            // 
-            this.txtSID.Location = new System.Drawing.Point(584, 273);
-            this.txtSID.Name = "txtSID";
-            this.txtSID.Size = new System.Drawing.Size(253, 22);
-            this.txtSID.TabIndex = 29;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(468, 270);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 25);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Staff ID: ";
-            // 
-            // txtCusID
-            // 
-            this.txtCusID.Location = new System.Drawing.Point(198, 270);
-            this.txtCusID.Name = "txtCusID";
-            this.txtCusID.Size = new System.Drawing.Size(224, 22);
-            this.txtCusID.TabIndex = 27;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(30, 270);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(127, 25);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Customer ID:";
-            // 
             // dtOrderDate
             // 
             this.dtOrderDate.Location = new System.Drawing.Point(607, 202);
@@ -241,7 +203,7 @@
             // cbCustomer
             // 
             this.cbCustomer.FormattingEnabled = true;
-            this.cbCustomer.Location = new System.Drawing.Point(201, 343);
+            this.cbCustomer.Location = new System.Drawing.Point(201, 286);
             this.cbCustomer.Name = "cbCustomer";
             this.cbCustomer.Size = new System.Drawing.Size(221, 24);
             this.cbCustomer.TabIndex = 22;
@@ -275,7 +237,7 @@
             // cbStaff
             // 
             this.cbStaff.FormattingEnabled = true;
-            this.cbStaff.Location = new System.Drawing.Point(584, 339);
+            this.cbStaff.Location = new System.Drawing.Point(595, 286);
             this.cbStaff.Name = "cbStaff";
             this.cbStaff.Size = new System.Drawing.Size(253, 24);
             this.cbStaff.TabIndex = 7;
@@ -295,7 +257,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(468, 339);
+            this.label6.Location = new System.Drawing.Point(481, 286);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 25);
             this.label6.TabIndex = 5;
@@ -335,7 +297,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 342);
+            this.label2.Location = new System.Drawing.Point(30, 282);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 25);
             this.label2.TabIndex = 1;
@@ -345,10 +307,6 @@
             // 
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.panel2.Controls.Add(this.txtSID);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.txtCusID);
-            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.dtOrderDate);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.cbStatus);
@@ -407,10 +365,6 @@
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Button btReturn;
-        private System.Windows.Forms.TextBox txtSID;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtCusID;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dtOrderDate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbStatus;

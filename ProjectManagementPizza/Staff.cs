@@ -166,7 +166,7 @@ namespace ProjectManagementPizza
                 s.street = txtStreet.Text;
 
                 s.salary = Convert.ToDecimal(txtSalary.Text);
-                s.commune_id = txtCID.Text;
+
                 db.SubmitChanges();
                 MessageBox.Show("Nhap thanh cong!");
             }
@@ -196,7 +196,7 @@ namespace ProjectManagementPizza
             txtPhone.Text = dataGridView1.Rows[r].Cells[2].Value.ToString();
             txtEmail.Text = dataGridView1.Rows[r].Cells[3].Value.ToString();
             txtStreet.Text = dataGridView1.Rows[r].Cells[4].Value.ToString();
-            txtCID.Text = dataGridView1.Rows[r].Cells[5].Value.ToString();
+            cbCommune.Text = dataGridView1.Rows[r].Cells[5].Value.ToString();
             txtSalary.Text = dataGridView1.Rows[r].Cells[6].Value.ToString();
         }
 

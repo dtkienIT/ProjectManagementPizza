@@ -54,6 +54,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Goldenrod;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -111,6 +112,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.OldLace;
             this.panel2.Controls.Add(this.btReturn);
             this.panel2.Controls.Add(this.btDelete);
             this.panel2.Controls.Add(this.btReload);
@@ -248,6 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(904, 602);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);

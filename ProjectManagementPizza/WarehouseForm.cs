@@ -70,6 +70,9 @@ namespace ProjectManagementPizza
         }
         private void btReturn_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            MenuQuanLi z = new MenuQuanLi();
+            z.ShowDialog();
             this.Close();
         }
 

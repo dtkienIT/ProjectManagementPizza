@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Staff));
-            this.txtCID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btCancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,21 +53,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btAdd = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txtCID
-            // 
-            this.txtCID.Location = new System.Drawing.Point(604, 254);
-            this.txtCID.Name = "txtCID";
-            this.txtCID.Size = new System.Drawing.Size(240, 22);
-            this.txtCID.TabIndex = 23;
-            this.txtCID.TextChanged += new System.EventHandler(this.txtCID_TextChanged);
             // 
             // label9
             // 
@@ -76,9 +67,8 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(428, 249);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(138, 25);
+            this.label9.Size = new System.Drawing.Size(0, 25);
             this.label9.TabIndex = 22;
-            this.label9.Text = "Commune ID: ";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // btCancel
@@ -225,7 +215,7 @@
             // cbCommune
             // 
             this.cbCommune.FormattingEnabled = true;
-            this.cbCommune.Location = new System.Drawing.Point(604, 304);
+            this.cbCommune.Location = new System.Drawing.Point(604, 253);
             this.cbCommune.Name = "cbCommune";
             this.cbCommune.Size = new System.Drawing.Size(240, 24);
             this.cbCommune.TabIndex = 7;
@@ -257,7 +247,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(428, 303);
+            this.label6.Location = new System.Drawing.Point(428, 253);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 25);
             this.label6.TabIndex = 5;
@@ -335,6 +325,19 @@
             this.panel1.TabIndex = 24;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
+            // btAdd
+            // 
+            this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
+            this.btAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btAdd.Location = new System.Drawing.Point(27, 23);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(104, 52);
+            this.btAdd.TabIndex = 22;
+            this.btAdd.Text = "Add";
+            this.btAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click_1);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Info;
@@ -342,7 +345,6 @@
             this.panel2.Controls.Add(this.txtStreet);
             this.panel2.Controls.Add(this.txtSName);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.txtCID);
             this.panel2.Controls.Add(this.txtSID);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.label9);
@@ -371,19 +373,6 @@
             this.panel3.TabIndex = 26;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // btAdd
-            // 
-            this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
-            this.btAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btAdd.Location = new System.Drawing.Point(27, 23);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(104, 52);
-            this.btAdd.TabIndex = 22;
-            this.btAdd.Text = "Add";
-            this.btAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click_1);
-            // 
             // Staff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -407,7 +396,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtCID;
         private System.Windows.Forms.Button btCancel;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btReturn;

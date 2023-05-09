@@ -62,9 +62,8 @@ namespace ProjectManagementPizza
         }
         public void resetall()
         {
-            txtSID.ResetText();
+
             dtOrderDate.ResetText();
-            txtCusID.ResetText();
             txtOID.ResetText();
             txtTotal.ResetText();
             cbStatus.ResetText();
@@ -73,18 +72,10 @@ namespace ProjectManagementPizza
         private bool checking()
         {
             int t; decimal y;
-            bool a = int.TryParse(txtSID.Text, out t);
             bool b = decimal.TryParse(txtTotal.Text, out y);
             bool c = int.TryParse(txtOID.Text, out t);
-            bool d = int.TryParse(txtCusID.Text, out t);
-            if (a == false)
-            {
-                MessageBox.Show("Staff ID khong hop le! moi nhap lai! ");
-                txtSID.ResetText();
-                txtSID.Focus();
-                return false;
-            }
-            else if (b == false)
+
+            if (b == false)
             {
                 MessageBox.Show("Total khong hop le! moi nhap lai! ");
                 txtTotal.ResetText();
@@ -99,15 +90,8 @@ namespace ProjectManagementPizza
                 txtTotal.Focus();
                 return false;
             }
-            else if (d == false)
-            {
-                MessageBox.Show("Customer khong hop le! moi nhap lai! ");
-                txtTotal.ResetText();
-                txtTotal.Focus();
-                return false;
-            }
             else
-                return true;
+            { return true; }
         }
         private void btAdd_Click(object sender, EventArgs e)
         {
@@ -145,8 +129,8 @@ namespace ProjectManagementPizza
             int r = dataGridView1.CurrentCell.RowIndex;
             // Chuyển thông tin từ Gridview lên các textbox ở panel
             txtOID.Text = dataGridView1.Rows[r].Cells[0].Value.ToString();
-            txtCusID.Text = dataGridView1.Rows[r].Cells[1].Value.ToString();
-            txtSID.Text = dataGridView1.Rows[r].Cells[2].Value.ToString();
+            cbCustomer.Text = dataGridView1.Rows[r].Cells[1].Value.ToString();
+            cbStaff.Text = dataGridView1.Rows[r].Cells[2].Value.ToString();
             dtOrderDate.Text = dataGridView1.Rows[r].Cells[3].Value.ToString();
             txtTotal.Text = dataGridView1.Rows[r].Cells[4].Value.ToString();
             cbStatus.Text = dataGridView1.Rows[r].Cells[5].Value.ToString();
@@ -186,9 +170,7 @@ namespace ProjectManagementPizza
 
                 o.order_id = Convert.ToInt32(txtOID.Text);
 
-                o.customer_id = Convert.ToInt32(txtCusID.Text);
 
-                o.staff_id = Convert.ToInt32(txtSID.Text);
 
                 o.order_date = dtOrderDate.Value;
 

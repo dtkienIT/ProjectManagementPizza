@@ -16,7 +16,7 @@ namespace ProjectManagementPizza
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WarehouseForm());
+            Application.Run(new MenuQuanLi());
         }
     }
 }
