@@ -21,7 +21,7 @@ namespace ProjectManagementPizza
         {
             myProgBar.Value = 0;
             myProgBar.Maximum = 100;
-            myProgBar.Step = 4;
+            myProgBar.Step = 1;
             timer1.Interval = 100;
 
             timer1.Start();
