@@ -37,7 +37,7 @@ namespace ProjectManagementPizza
                 {
                     // Tài khoản đăng nhập hợp lệ, tiếp tục xử lý đăng nhập ở đây
                     this.Hide();
-                    MenuQuanLi ap = new MenuQuanLi();
+                    MyProgressBar ap = new MyProgressBar();
                     ap.ShowDialog();
                     this.Close();    
                   
