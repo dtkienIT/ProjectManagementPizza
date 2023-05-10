@@ -30,13 +30,15 @@ namespace ProjectManagementPizza
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyProgressBar));
             this.myProgBar = new MyUserControls.MyProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // myProgBar
             // 
-            this.myProgBar.Location = new System.Drawing.Point(45, 12);
+            this.myProgBar.BackColor = System.Drawing.Color.Transparent;
+            this.myProgBar.Location = new System.Drawing.Point(105, 84);
             this.myProgBar.Maximum = 100;
             this.myProgBar.Name = "myProgBar";
             this.myProgBar.Size = new System.Drawing.Size(600, 277);
@@ -53,8 +55,14 @@ namespace ProjectManagementPizza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.myProgBar);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MyProgressBar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyProgressBar";
