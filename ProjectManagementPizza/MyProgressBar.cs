@@ -53,11 +53,14 @@ namespace ProjectManagementPizza
             if (myProgBar.Value >= myProgBar.Maximum)
             {
                 timer1.Stop();
-                
+
+
+                this.Hide();
                 MenuQuanLi ap = new MenuQuanLi();
-                ap.Show();
-               
+                ap.ShowDialog();
+                this.Close();
             }
+   
         }
     }
 }
