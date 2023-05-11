@@ -46,7 +46,7 @@ namespace ProjectManagementPizza
             this.Hide();
             Staff z= new Staff();
             z.ShowDialog();
-            this.Close();
+            
         }
 
         private void createCustomerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace ProjectManagementPizza
             this.Hide();
             ORDER z = new ORDER();  
             z.ShowDialog();
-            this.Close();
+          
         }
 
         private void createProductToolStripMenuItem_Click(object sender, EventArgs e)
@@ -95,7 +95,7 @@ namespace ProjectManagementPizza
             this.Hide();
             Categories z = new Categories();
             z.ShowDialog();
-            this.Close();
+            
         }
 
         private void dsProductToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace ProjectManagementPizza
             this.Hide();
             WarehouseForm z  = new WarehouseForm(); 
             z.ShowDialog();
-            this.Close();
+          
         }
     }
 }

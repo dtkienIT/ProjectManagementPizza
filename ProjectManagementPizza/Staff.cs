@@ -152,23 +152,30 @@ namespace ProjectManagementPizza
         {
             if (checking() == true)
             {
-                int r = dataGridView1.CurrentCell.RowIndex;
-                string tempDID = dataGridView1.Rows[r].Cells[0].Value.ToString();
-                staff s = db.staffs.Single(x => x.staff_id == Convert.ToInt32(tempDID));
-                s.staff_id = Convert.ToInt32(txtSID.Text);
+                try
+                {
+                    int r = dataGridView1.CurrentCell.RowIndex;
+                    string tempDID = dataGridView1.Rows[r].Cells[0].Value.ToString();
+                    staff s = db.staffs.Single(x => x.staff_id == Convert.ToInt32(tempDID));
+                    s.staff_id = Convert.ToInt32(txtSID.Text);
 
-                s.staff_name = txtSName.Text;
+                    s.staff_name = txtSName.Text;
 
-                s.phone_number = txtPhone.Text;
+                    s.phone_number = txtPhone.Text;
 
-                s.email = txtEmail.Text;
+                    s.email = txtEmail.Text;
 
-                s.street = txtStreet.Text;
+                    s.street = txtStreet.Text;
 
-                s.salary = Convert.ToDecimal(txtSalary.Text);
+                    s.salary = Convert.ToDecimal(txtSalary.Text);
 
-                db.SubmitChanges();
-                MessageBox.Show("Nhap thanh cong!");
+                    db.SubmitChanges();
+                    MessageBox.Show("Nhap thanh cong!");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("ID da ton tai!");
+                }
             }
             else { }
         }
@@ -209,26 +216,33 @@ namespace ProjectManagementPizza
         {
             if (checking() == true)
             {
-                db.staffs.InsertOnSubmit(new staff
+                try
                 {
-                    staff_id = Convert.ToInt32(txtSID.Text),
+                    db.staffs.InsertOnSubmit(new staff
+                    {
+                        staff_id = Convert.ToInt32(txtSID.Text),
 
-                    staff_name = txtSName.Text,
+                        staff_name = txtSName.Text,
 
-                    phone_number = txtPhone.Text,
+                        phone_number = txtPhone.Text,
 
-                    email = txtEmail.Text,
+                        email = txtEmail.Text,
 
-                    street = txtStreet.Text,
+                        street = txtStreet.Text,
 
-                    salary = Convert.ToDecimal(txtSalary.Text),
-                    commune_id = cbCommune.Text,
-                });
-                db.SubmitChanges();
-                MyCommune();
-                MyStaff();
-                resetall();
-                MessageBox.Show("Nhap du lieu thanh cong! ");
+                        salary = Convert.ToDecimal(txtSalary.Text),
+                        commune_id = cbCommune.Text,
+                    });
+                    db.SubmitChanges();
+                    MyCommune();
+                    MyStaff();
+                    resetall();
+                    MessageBox.Show("Nhap du lieu thanh cong! ");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("ID da ton tai!"); 
+                }
             }
             else { }
         }

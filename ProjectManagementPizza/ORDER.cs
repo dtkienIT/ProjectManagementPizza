@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -95,33 +96,41 @@ namespace ProjectManagementPizza
         }
         private void btAdd_Click(object sender, EventArgs e)
         {
+
             if (checking() == true)
-            {
-                db.orders.InsertOnSubmit(new order
+            { try
                 {
-                    order_id = Convert.ToInt32(txtOID.Text),
+                    db.orders.InsertOnSubmit(new order
+                    {
+                        order_id = Convert.ToInt32(txtOID.Text),
 
-                    customer_id = Convert.ToInt32(cbCustomer.Text),
+                        customer_id = Convert.ToInt32(cbCustomer.Text),
 
-                    staff_id = Convert.ToInt32(cbStaff.Text),
+                        staff_id = Convert.ToInt32(cbStaff.Text),
 
-                    order_date = dtOrderDate.Value,
+                        order_date = dtOrderDate.Value,
 
-                    total = Convert.ToDecimal(txtTotal.Text),
+                        total = Convert.ToDecimal(txtTotal.Text),
 
-                    status = cbStatus.Text,
-                });
-                cbStaff.Items.Clear();
-                cbCustomer.Items.Clear();
-                db.SubmitChanges();
-                MyOrder();
-                MyStaff();
-                MyCustomer();
-                resetall();
+                        status = cbStatus.Text,
+                    });
+                    cbStaff.Items.Clear();
+                    cbCustomer.Items.Clear();
+                    db.SubmitChanges();
+                    MyOrder();
+                    MyStaff();
+                    MyCustomer();
+                    resetall();
+                    MessageBox.Show("Nhập dữ liệu thành công!");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Id đã tồn tại");
+                }
                 
-                MessageBox.Show("Nhập dữ liệu thành công!");
             }
             else { }
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -154,7 +163,7 @@ namespace ProjectManagementPizza
                 MyOrder();
                 MessageBox.Show("Xoa du lieu thanh cong!");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Loi khong the xoa! ");
             }
@@ -164,21 +173,29 @@ namespace ProjectManagementPizza
         {
             if (checking() == true)
             {
-                int r = dataGridView1.CurrentCell.RowIndex;
-                string tempDID = dataGridView1.Rows[r].Cells[0].Value.ToString();
-                order o = db.orders.Single(x => x.order_id == Convert.ToInt32(tempDID));
+                try
+                {
+                    int r = dataGridView1.CurrentCell.RowIndex;
+                    string tempDID = dataGridView1.Rows[r].Cells[0].Value.ToString();
+                    order o = db.orders.Single(x => x.order_id == Convert.ToInt32(tempDID));
 
-                o.order_id = Convert.ToInt32(txtOID.Text);
+                    o.order_id = Convert.ToInt32(txtOID.Text);
 
 
 
-                o.order_date = dtOrderDate.Value;
+                    o.order_date = dtOrderDate.Value;
 
-                o.total = Convert.ToDecimal(txtTotal.Text);
+                    o.total = Convert.ToDecimal(txtTotal.Text);
 
-                o.status = cbStatus.Text;
-                db.SubmitChanges();
-                MessageBox.Show("Nhap thanh cong!");
+                    o.status = cbStatus.Text;
+                    db.SubmitChanges();
+                    MessageBox.Show("Nhap thanh cong!");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Id đã tồn tại");
+                }
+
             }
             else { }
         }
