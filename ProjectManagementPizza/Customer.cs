@@ -125,18 +125,24 @@ namespace ProjectManagementPizza
                                             .FirstOrDefault();
             if (isEmail(txtE.Text))
             {
-                db.customers.InsertOnSubmit(new customer
+                try
                 {
-                    customer_id = int.Parse(txtCusId.Text),
-                    customer_name = txtCusN.Text,
-                    phone_number = txtP.Text,
-                    email = txtE.Text,
-                    street = txtS.Text,
-                    commune_id = selectedCommuneId
-                });
-                db.SubmitChanges();
-                MySetCustomerInDataGridView();
-                MessageBox.Show("Thêm thành công!", "Thông báo");
+                    db.customers.InsertOnSubmit(new customer
+                    {
+                        customer_id = int.Parse(txtCusId.Text),
+                        customer_name = txtCusN.Text,
+                        phone_number = txtP.Text,
+                        email = txtE.Text,
+                        street = txtS.Text,
+                        commune_id = selectedCommuneId
+                    });
+                    db.SubmitChanges();
+                    MySetCustomerInDataGridView();
+                    MessageBox.Show("Thêm thành công!", "Thông báo");
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("ID đã tồn tại");
+                }
             }
             else
             {
@@ -205,17 +211,24 @@ namespace ProjectManagementPizza
                                             .FirstOrDefault();
             if (isEmail(txtE.Text))
             {
-                customer DistQ = db.customers.Single(x => x.customer_id == tempDID);
-                DistQ.customer_id = int.Parse(txtCusId.Text);
-                DistQ.customer_name = txtCusN.Text;
-                DistQ.phone_number = txtP.Text;
-                DistQ.email = txtE.Text;
-                DistQ.street = txtS.Text;
-                DistQ.commune_id = selectedCommuneId;
-               
-                db.SubmitChanges();
-                MySetCustomerInDataGridView();
-                MessageBox.Show("Sửa thành công!", "Thông báo");
+                try
+                {
+                    customer DistQ = db.customers.Single(x => x.customer_id == tempDID);
+                    DistQ.customer_id = int.Parse(txtCusId.Text);
+                    DistQ.customer_name = txtCusN.Text;
+                    DistQ.phone_number = txtP.Text;
+                    DistQ.email = txtE.Text;
+                    DistQ.street = txtS.Text;
+                    DistQ.commune_id = selectedCommuneId;
+
+                    db.SubmitChanges();
+                    MySetCustomerInDataGridView();
+                    MessageBox.Show("Sửa thành công!", "Thông báo");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Id đã tồn tại");
+                }
             }
             else
             {

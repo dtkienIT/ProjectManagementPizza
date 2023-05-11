@@ -190,7 +190,7 @@ namespace ProjectManagementPizza
             }
             catch (SqlException)
             {
-                MessageBox.Show(cmd.CommandText);// "Không sửa được. Lỗi rồi!");
+                MessageBox.Show("Id đã tồn tại!");// "Không sửa được. Lỗi rồi!");
                 conn.Close();
             }
         }

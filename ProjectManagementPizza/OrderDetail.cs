@@ -141,7 +141,7 @@ namespace ProjectManagementPizza
                 }
                 catch (SqlException)
                 {
-                    MessageBox.Show(cmd.CommandText);
+                    MessageBox.Show("Id đã tồn tại");
                 }
             }
         
@@ -195,7 +195,7 @@ namespace ProjectManagementPizza
             }
             catch (SqlException)
             {
-                MessageBox.Show(cmd.CommandText);// "Không sửa được. Lỗi rồi!");
+                MessageBox.Show("id đã tồn tại");// "Không sửa được. Lỗi rồi!");
                 conn.Close();
             }
         }
