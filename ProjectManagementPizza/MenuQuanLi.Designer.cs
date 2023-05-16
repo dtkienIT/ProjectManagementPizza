@@ -38,12 +38,12 @@
             this.cretateOrderDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createPizzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createWareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSachReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dsProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dsProductDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createWareHouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,10 +51,10 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createDataToolStripMenuItem,
-            this.danhSachReportToolStripMenuItem,
+            this.exitToolStripMenuItem,
             this.returnToLoginToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.createDataToolStripMenuItem,
+            this.danhSachReportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(901, 28);
@@ -125,6 +125,13 @@
             this.createCategoriesToolStripMenuItem.Text = "Create Categories";
             this.createCategoriesToolStripMenuItem.Click += new System.EventHandler(this.createCategoriesToolStripMenuItem_Click);
             // 
+            // createWareHouseToolStripMenuItem
+            // 
+            this.createWareHouseToolStripMenuItem.Name = "createWareHouseToolStripMenuItem";
+            this.createWareHouseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.createWareHouseToolStripMenuItem.Text = "Create WareHouse";
+            this.createWareHouseToolStripMenuItem.Click += new System.EventHandler(this.createWareHouseToolStripMenuItem_Click);
+            // 
             // danhSachReportToolStripMenuItem
             // 
             this.danhSachReportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -137,14 +144,14 @@
             // dsProductToolStripMenuItem
             // 
             this.dsProductToolStripMenuItem.Name = "dsProductToolStripMenuItem";
-            this.dsProductToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.dsProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dsProductToolStripMenuItem.Text = "dsProduct";
             this.dsProductToolStripMenuItem.Click += new System.EventHandler(this.dsProductToolStripMenuItem_Click_1);
             // 
             // dsProductDetailToolStripMenuItem
             // 
             this.dsProductDetailToolStripMenuItem.Name = "dsProductDetailToolStripMenuItem";
-            this.dsProductDetailToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.dsProductDetailToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dsProductDetailToolStripMenuItem.Text = "dsOrderDetail";
             this.dsProductDetailToolStripMenuItem.Click += new System.EventHandler(this.dsProductDetailToolStripMenuItem_Click);
             // 
@@ -161,13 +168,6 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // createWareHouseToolStripMenuItem
-            // 
-            this.createWareHouseToolStripMenuItem.Name = "createWareHouseToolStripMenuItem";
-            this.createWareHouseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.createWareHouseToolStripMenuItem.Text = "Create WareHouse";
-            this.createWareHouseToolStripMenuItem.Click += new System.EventHandler(this.createWareHouseToolStripMenuItem_Click);
             // 
             // MenuQuanLi
             // 
