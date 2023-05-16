@@ -134,10 +134,14 @@ namespace ProjectManagementPizza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1365, 531);
             this.Controls.Add(this.cbProduct);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FOderDetailReport";
             this.Text = "FOderDetailReport";
             this.Load += new System.EventHandler(this.FOderDetailReport_Load);

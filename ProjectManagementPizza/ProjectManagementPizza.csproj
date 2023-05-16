@@ -82,6 +82,9 @@
     <Compile Include="Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="dsProduct.cs">
+      <DependentUpon>dsProduct.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsProduct.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

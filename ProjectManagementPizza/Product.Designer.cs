@@ -36,19 +36,19 @@ namespace ProjectManagementPizza
             this.label3 = new System.Windows.Forms.Label();
             this.txtPN = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtD = new System.Windows.Forms.TextBox();
-            this.txtP = new System.Windows.Forms.TextBox();
-            this.dtGridView = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cbSearch = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.txtD = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.txtP = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dtGridView = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.lblProduct = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridView)).BeginInit();
             this.SuspendLayout();
@@ -127,60 +127,62 @@ namespace ProjectManagementPizza
             this.panel1.Size = new System.Drawing.Size(1002, 236);
             this.panel1.TabIndex = 12;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(607, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(53, 41);
+            this.button1.TabIndex = 29;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(350, 187);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(215, 22);
+            this.txtSearch.TabIndex = 28;
+            // 
+            // cbSearch
+            // 
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Location = new System.Drawing.Point(162, 185);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.Size = new System.Drawing.Size(156, 24);
+            this.cbSearch.TabIndex = 27;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(21, 185);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 29);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Search:";
+            // 
+            // button5
+            // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(776, 86);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(114, 67);
+            this.button5.TabIndex = 25;
+            this.button5.Text = "Reload";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // txtD
             // 
             this.txtD.Location = new System.Drawing.Point(162, 86);
             this.txtD.Name = "txtD";
             this.txtD.Size = new System.Drawing.Size(213, 22);
             this.txtD.TabIndex = 13;
-            // 
-            // txtP
-            // 
-            this.txtP.Location = new System.Drawing.Point(162, 47);
-            this.txtP.Name = "txtP";
-            this.txtP.Size = new System.Drawing.Size(213, 22);
-            this.txtP.TabIndex = 12;
-            // 
-            // dtGridView
-            // 
-            this.dtGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtGridView.Location = new System.Drawing.Point(0, 336);
-            this.dtGridView.Name = "dtGridView";
-            this.dtGridView.RowHeadersWidth = 51;
-            this.dtGridView.RowTemplate.Height = 24;
-            this.dtGridView.Size = new System.Drawing.Size(1014, 181);
-            this.dtGridView.TabIndex = 13;
-            this.dtGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_CellContentClick);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(573, 2);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(114, 67);
-            this.btnAdd.TabIndex = 21;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(776, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 67);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Edit";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnDelete
             // 
@@ -196,19 +198,53 @@ namespace ProjectManagementPizza
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button5
+            // txtP
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(776, 86);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(114, 67);
-            this.button5.TabIndex = 25;
-            this.button5.Text = "Reload";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.txtP.Location = new System.Drawing.Point(162, 47);
+            this.txtP.Name = "txtP";
+            this.txtP.Size = new System.Drawing.Size(213, 22);
+            this.txtP.TabIndex = 12;
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(776, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(114, 67);
+            this.button4.TabIndex = 23;
+            this.button4.Text = "Edit";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(573, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(114, 67);
+            this.btnAdd.TabIndex = 21;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // dtGridView
+            // 
+            this.dtGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtGridView.Location = new System.Drawing.Point(0, 336);
+            this.dtGridView.Name = "dtGridView";
+            this.dtGridView.RowHeadersWidth = 51;
+            this.dtGridView.RowTemplate.Height = 24;
+            this.dtGridView.Size = new System.Drawing.Size(1014, 181);
+            this.dtGridView.TabIndex = 13;
+            this.dtGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtGridView_CellContentClick);
             // 
             // label12
             // 
@@ -231,46 +267,11 @@ namespace ProjectManagementPizza
             this.lblProduct.TabIndex = 27;
             this.lblProduct.Text = "0";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(21, 185);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 29);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Search:";
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(162, 185);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(156, 24);
-            this.cbSearch.TabIndex = 27;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(350, 187);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(215, 22);
-            this.txtSearch.TabIndex = 28;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(607, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 41);
-            this.button1.TabIndex = 29;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1014, 517);
@@ -279,7 +280,8 @@ namespace ProjectManagementPizza
             this.Controls.Add(this.dtGridView);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Product";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí sản phẩm";
